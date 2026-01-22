@@ -20,7 +20,7 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand mx auto" href="index.html"
+          <a class="navbar-brand mx-auto" href="index.html"
             ><h4>Guillermo <span class="text-primary">Sias</span></h4></a
           >
           <div
@@ -52,26 +52,30 @@
           </div>
         </div>
       </nav>
-      <div class="card bg-black text-white pt-5">
+      <div class="card rounded-0 bg-black text-white pt-5">
         <div class="row w-100 align-items-center justify-content-center">
           <div class="col-6">
             <img
               src="./assets/img/perfil.JPG"
               alt="foto perfil"
-              class="img-fluid rounded shadow m-0"
+              class="img-fluid m-0"
             />
           </div>
           <div class="card-body col-6">
-            <h1 class="fs-1 card-title">
+            <h1 class="fs-1 fw-bold card-title move">
               Hola, mi nombre es Guill<span class="text-primary">ermo</span>
             </h1>
             <div class="card-text">
-              <p class="fs-4">Ingeniero en sonido</p>
-              <p class="fs-4">Desarrollador Full Stack</p>
-              <a href="https://github.com/gsiasp-hash"
+              <p class="fs-5 fw-300 move">
+                Soy un desarrollador Full Stack apasionado por crear soluciones
+                web eficientes y escalables.
+              </p>
+              <a href="https://github.com/gsiasp-hash" target="_blank"
                 ><i class="fa-brands fa-github fa-2xl"></i
               ></a>
-              <a href="https://www.linkedin.com/in/guillermo-sias-762775180/"
+              <a
+                href="https://www.linkedin.com/in/guillermo-sias-762775180/"
+                target="_blank"
                 ><i class="fa-brands fa-linkedin fa-2xl"></i></a
               ><br /><br />
               <a href="#sobremi"
@@ -83,23 +87,65 @@
       </div>
     </header>
     <main>
-      <div class="container-fluid p-5 bg-primary"></div>
+      <div class="container-fluid p-5 bg-light d-flex justify-content-center">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2 class="fs-1">Ingeniero En Sonido</h2>
+            </div>
+            <div class="carousel-item">
+              <h2 class="fs-1">Desarrollador Full Stack</h2>
+            </div>
+            <div class="carousel-item">
+              <h2 class="fs-1">
+                Ingeniero en Sonido /
+                <span class="text-primary">Desarrollador Full Stack</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12 card">
+          <div class="col-12 card bg-black text-white rounded-0" id="sobremi">
             <div class="card-body">
-              <h5 class="card-title">Sobre mi</h5>
-              <p>
-                Me llamo Guillermo Sias, soy desarrollador Full Stack y
-                Ingeniero en sonido. Tengo experiencia en el desarrollo web
-                frontend y backend, con conocimientos en tecnologías como HTML,
-                CSS, JavaScript, Bootstrap y frameworks como React.
-              </p>
+              <h3 class="card-title text-center">Sobre mi</h3>
+              <div class="row align-items-center justify-content-center">
+                <img
+                  src="./assets/img/foto1.jpg"
+                  class="col-12 col-md-6 img-fluid m-0"
+                  alt=""
+                />
+                <p class="col-12 col-md-6 card-text fs-4">
+                  Con más de 12 años de trayectoria liderando equipos y
+                  proyectos en el área de Ingeniería en Sonido, he decidido dar
+                  el paso definitivo hacia mi gran pasión: el desarrollo de
+                  software.<br />
+                  Mi carrera se ha basado en una capacidad excepcional de
+                  troubleshooting y en la entrega de soluciones bajo entornos de
+                  alta presión, habilidades que hoy aplico en la creación de
+                  experiencias web modernas.<br />
+                  Actualmente, estoy enfocado en el
+                  <span class="fw-bold">Desarrollo Full Stack</span>, dominando
+                  la arquitectura visual con herramientas como Tailwind CSS y
+                  arquitecturas modernas.<br />
+                  Mi objetivo es fusionar mi experiencia en gestión y resolución
+                  técnica de problemas con el desarrollo de código eficiente y
+                  escalable.<br />
+                  Soy un entusiasta de la tecnología, un viajero por naturaleza
+                  y un convencido de que la mejor solución técnica nace de la
+                  disciplina y la creatividad.
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-12 col-md-5 card">
+          <div class="col-12 col-md-5 card move">
             <div class="card-body">
               <h5 class="card-title">Estudios</h5>
               <p>
@@ -110,7 +156,7 @@
               </p>
             </div>
           </div>
-          <div class="col-12 col-md-5 card">
+          <div class="col-12 col-md-5 card move">
             <div class="card-body">
               <h5 class="card-title">Experiencia</h5>
               <p>
@@ -121,7 +167,7 @@
               </p>
             </div>
           </div>
-          <div class="col-12 col-md-2 card">
+          <div class="col-12 col-md-2 card move">
             <div class="card-body">
               <h5 class="card-title">Skills</h5>
               <p>Tecnologías que manejo:</p>
