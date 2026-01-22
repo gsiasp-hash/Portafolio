@@ -5,9 +5,12 @@ body {
 .bg-primary {
   background-color: #ef0303 !important;
 }
+.border-primary {
+  border-color: #ef0303 !important;
+}
 .btn-primary {
   background-color: #ef0303;
-  border-color:#ef0303;
+  border-color: #ef0303;
 }
 .btn-primary:hover {
   background-color: #000000;
