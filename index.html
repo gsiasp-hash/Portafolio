@@ -11,8 +11,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/17bcd852b8.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body class="bg-black">
+  <body class="bg-light">
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
@@ -20,7 +24,7 @@
             ><h4>Guillermo <span class="text-primary">Sias</span></h4></a
           >
           <div
-            class="collapse navbar-collapse justify-content-centerjustify-content-md-end"
+            class="collapse navbar-collapse justify-content-center justify-content-md-end"
             id="navbarText"
           >
             <ul class="navbar-nav mx-auto">
@@ -42,48 +46,95 @@
                 <a class="nav-link" href="#skills">Skills</a>
               </li>
             </ul>
-            <button class="btn btn-primary" type="submit">Contactame</button>
+            <button class="btn btn-primary shadow" type="submit">
+              Contactame
+            </button>
           </div>
         </div>
       </nav>
+      <div class="card bg-black text-white pt-5">
+        <div class="row w-100 align-items-center justify-content-center">
+          <div class="col-6">
+            <img
+              src="./assets/img/perfil.JPG"
+              alt="foto perfil"
+              class="img-fluid rounded shadow m-0"
+            />
+          </div>
+          <div class="card-body col-6">
+            <h1 class="fs-1 card-title">
+              Hola, mi nombre es Guill<span class="text-primary">ermo</span>
+            </h1>
+            <div class="card-text">
+              <p class="fs-4">Ingeniero en sonido</p>
+              <p class="fs-4">Desarrollador Full Stack</p>
+              <a href="https://github.com/gsiasp-hash"
+                ><i class="fa-brands fa-github fa-2xl"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/guillermo-sias-762775180/"
+                ><i class="fa-brands fa-linkedin fa-2xl"></i></a
+              ><br /><br />
+              <a href="#sobremi"
+                ><button class="btn btn-primary">Sobre mi</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
-      <div class="container-fluid my-5">
+      <div class="container-fluid p-5 bg-primary"></div>
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-12 text-center text-white my-5">
-            <h1>Hola, mi nombre es Guillermo.</h1>
-            <p>Soy Desarrollador Full Stack</p>
-            <p>Soy Ingeniero en sonido</p>
+          <div class="col-12 card">
+            <div class="card-body">
+              <h5 class="card-title">Sobre mi</h5>
+              <p>
+                Me llamo Guillermo Sias, soy desarrollador Full Stack y
+                Ingeniero en sonido. Tengo experiencia en el desarrollo web
+                frontend y backend, con conocimientos en tecnologías como HTML,
+                CSS, JavaScript, Bootstrap y frameworks como React.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="row my-2">
-          <div class="col-12 col-md-5 mx-auto bg-white rounded">
-            <section>
-              <h3>Sobre mi</h3>
-            </section>
+        <div class="row">
+          <div class="col-12 col-md-5 card">
+            <div class="card-body">
+              <h5 class="card-title">Estudios</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+                iure rem dolorem officia, exercitationem temporibus ut pariatur
+                omnis a consequatur minima? Sapiente magnam quis pariatur
+                accusantium sed dolor, esse corporis!
+              </p>
+            </div>
           </div>
-          <div class="col-12 col-md-5 mx-auto bg-white rounded">
-            <section>
-              <h3>Estudios</h3>
-            </section>
+          <div class="col-12 col-md-5 card">
+            <div class="card-body">
+              <h5 class="card-title">Experiencia</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti nihil doloremque quis quas voluptate assumenda, in
+                asperiores laudantium doloribus voluptatem? Provident quisquam
+                voluptas unde quo delectus et saepe dignissimos repellat?
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="row my-2">
-          <div class="col-12 col-md-5 mx-auto bg-white rounded">
-            <section>
-              <h3>Experiencia</h3>
-            </section>
-          </div>
-          <div class="col-12 col-md-5 mx-auto bg-white rounded">
-            <section>
-              <h3>Skills</h3>
-            </section>
+          <div class="col-12 col-md-2 card">
+            <div class="card-body">
+              <h5 class="card-title">Skills</h5>
+              <p>Tecnologías que manejo:</p>
+              <i class="fa-brands fa-html5 fa-2xl"></i>
+              <i class="fa-brands fa-css fa-2xl"></i>
+              <i class="fa-brands fa-bootstrap fa-2xl"></i>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <footer class="container-fluid bg-white p-5 my-5 text-center">
-      <p>&copy; 2024 Mi Portafolio</p>
+    <footer class="container-fluid bg-white p-5 mt-5 mb-0 text-center">
+      <p>&copy; 2026 Guillermo Sias</p>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

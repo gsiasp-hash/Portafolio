@@ -2,3 +2,28 @@
 body {
   font-family: "Roboto Condensed", sans-serif;
 }
+.bg-primary {
+  background-color: #ef0303 !important;
+}
+.btn-primary {
+  background-color: #ef0303;
+  border-color: #000000;
+}
+.btn-primary:hover {
+  background-color: #000000;
+  border-color: #ef0303;
+}
+.text-primary {
+  color: #ef0303 !important;
+}
+.nav-link:hover {
+  color: #ef0303 !important;
+}
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateX(+5px);
+}
