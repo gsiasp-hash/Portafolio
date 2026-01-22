@@ -7,7 +7,7 @@ body {
 }
 .btn-primary {
   background-color: #ef0303;
-  border-color: #000000;
+  border-color:#ef0303;
 }
 .btn-primary:hover {
   background-color: #000000;

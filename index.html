@@ -46,7 +46,9 @@
                 <a class="nav-link" href="#skills">Skills</a>
               </li>
             </ul>
-            <button class="btn btn-primary" type="submit">Contactame</button>
+            <a href="#contacto">
+              <button class="btn btn-primary" type="submit">Contactame</button>
+            </a>
           </div>
         </div>
       </nav>
@@ -152,7 +154,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-12 card move bg-light" id="experiencia">
+            <div class="col-12 card rounded-0 bg-light" id="experiencia">
               <div class="card-body">
                 <h5 class="card-title">Experiencia</h5>
                 <p class="card-text">
@@ -165,7 +167,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 card move bg-light" id="skills">
+        <div class="col-12 rounded-0 card move bg-light" id="skills">
           <div class="card-body">
             <h5 class="card-title">Skills</h5>
             <p class="card-text">Tecnologías que manejo:</p>
@@ -174,6 +176,33 @@
             <i class="fa-brands fa-bootstrap fa-2xl"></i>
           </div>
         </div>
+      </div>
+      <div
+        class="container-fluid p-5 bg-light border-primary text-center"
+        id="contacto"
+      >
+        <h3>Contactame</h3>
+        <p>Me encantaria hablar de tu proyecto!</p>
+        <div class="col-12 col-md-6 mx-auto mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="email@ejemplo.com"
+          />
+        </div>
+        <div class="col-12 col-md-6 mx-auto">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Cuentame de tu idea</label
+          >
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+        <button type="button" class="btn btn-primary px-5 mt-3">Enviar</button>
       </div>
     </main>
     <footer class="container-fluid bg-white p-5 mt-5 mb-0 text-center">
