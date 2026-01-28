@@ -76,3 +76,8 @@ body {
 [id] {
   scroll-margin-top: 80px;
 }
+.carousel-item > * {
+  width: 100%;
+  text-align: center;
+}
+
