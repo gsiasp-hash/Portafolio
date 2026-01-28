@@ -1,42 +1,75 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Paleta de colores profesional */
+:root {
+  --dark-bg: #ffffff;
+  --primary: #1a365d;
+  --primary-light: #2d5a8c;
+  --accent: #d4af37;
+  --accent-light: #e8c547;
+  --neutral-dark: #2d3748;
+  --neutral: #718096;
+  --light: #f7fafc;
+  --white: #ffffff;
+}
+
 body {
   font-family: "Roboto Condensed", sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--neutral-dark);
+}
+.header {
+  background-color: var(--primary);
+  border-bottom: 3px solid var(--accent);
+  color: var(--white);
 }
 .bg-primary {
-  background-color: #ef0303 !important;
+  background-color: var(--light) !important;
 }
+
 .border-primary {
-  border-color: #ef0303 !important;
+  border-color: var(--primary) !important;
 }
 .btn-primary {
-  background-color: #ef0303;
-  border-color: #ef0303;
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+  font-weight: 600;
 }
 .btn-outline-primary {
-  color: #ef0303;
-  border-color: #ef0303;
+  color: var(--primary);
+  border-color: var(--primary);
+  font-weight: 600;
 }
 .btn-outline-primary:hover {
-  background-color: #000000;
-  color: #ffffff;
-  border-color: #ef0303;
+  background-color: var(--primary-light);
+  color: var(--white);
+  border-color: var(--primary-light);
 }
 .btn-primary:hover {
-  background-color: #000000;
-  border-color: #ef0303;
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--primary);
 }
 .text-primary {
-  color: #ef0303 !important;
+  color: var(--primary) !important;
+  font-weight: 600;
 }
 .nav-link:hover {
-  color: #ef0303 !important;
+  color: var(--primary) !important;
+  border-bottom: 2px solid var(--accent);
 }
 .card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  box-shadow: 0 2px 8px rgba(26, 54, 93, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  background-color: var(--white);
+  border: 1px solid #e2e8f0;
+  color: var(--neutral-dark);
 }
 
 .move:hover {
-  transform: translateX(+5px);
-  transition: all 0.3s ease-in-out;
+  transform: scale(1.03);
+  transition: all 0.5s;
 }
