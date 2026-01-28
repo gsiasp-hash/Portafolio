@@ -73,3 +73,6 @@ body {
   transform: scale(1.03);
   transition: all 0.5s;
 }
+[id] {
+  scroll-margin-top: 80px;
+}
