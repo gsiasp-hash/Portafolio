@@ -12,6 +12,28 @@
   --light: #f7fafc;
   --white: #ffffff;
 }
+#Hero-Section {
+  background-image: url("../img/code.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#Hero-Section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  filter: blur(2px);
+  transform: scale(1.1); /* evita bordes */
+  z-index: 0;
+}
+
+#Hero-Section > * {
+  position: relative;
+  z-index: 1;
+}
 
 body {
   font-family: "Roboto Condensed", sans-serif;
