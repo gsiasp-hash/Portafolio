@@ -8,13 +8,13 @@ import Hero from "../components/Hero";
 export default class Home extends Component {
   render() {
     return (
-      <>
+      <div className="min-h-screen flex flex-col font-mono">
         <Navbar />
         <Hero />
         <Proyectos />
         <Proyecto />
         <Footer />
-      </>
+      </div>
     );
   }
 }
