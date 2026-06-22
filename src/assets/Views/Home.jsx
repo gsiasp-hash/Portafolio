@@ -11,8 +11,8 @@ export default class Home extends Component {
       <div className="min-h-screen flex flex-col font-mono">
         <Navbar />
         <Hero />
-        <Proyectos />
-        <Proyecto />
+        {/* <Proyectos />
+        <Proyecto /> */}
         <Footer />
       </div>
     );

@@ -1,1 +1,1 @@
-Portafolio creado con React
+Portafolio creado con React + Tailwind + React router
