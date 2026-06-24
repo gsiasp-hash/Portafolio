@@ -14,7 +14,7 @@ export default class Hero extends Component {
           <h2 className="text-xs font-medium ">$ npm run dev</h2>
           <p className="text-sm mt-10">
             Full Stack Developer en formación | JavaScript · React · Node.js ·
-            Bootstrap · Tailwind | Ingeniero en Sonido con 7+ años en tecnología
+            Bootstrap · Tailwind | Ingeniero en Sonido con 10+ años en tecnología
             y gestión técnica
           </p>
           <div className="mt-3">
