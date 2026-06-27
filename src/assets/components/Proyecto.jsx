@@ -1,34 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class Proyecto extends Component {
   render() {
     return (
-     <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img
-          className="w-full"
-          src="/img/card-top.jpg"
-          alt="Sunset in the mountains"
-        />
-        <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-          <p className="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
-          </p>
+      <div className="bg-white text-black flex flex-col items-center gap-6 p-7 md:flex-row md:gap-8 rounded-2xl">
+        <div>
+          <img
+            className="size-48 shadow-xl rounded-md"
+            alt=""
+            src="/img/cover.png"
+          />
         </div>
-        <div className="px-6 pt-4 pb-2">
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #photography
-          </span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #travel
-          </span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #winter
+        <div className="flex items-center md:items-start">
+          <span className="text-2xl font-medium">Class Warfare</span>
+          <span className="font-medium text-sky-500">The Anti-Patterns</span>
+          <span className="flex gap-2 font-medium text-gray-600 dark:text-gray-400">
+            <span>No. 4</span>
+            <span>·</span>
+            <span>2025</span>
           </span>
         </div>
       </div>
-    )
+    );
   }
 }
