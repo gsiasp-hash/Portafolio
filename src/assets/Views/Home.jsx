@@ -9,7 +9,7 @@ export default class Home extends Component {
       <div className="min-h-screen flex flex-col font-mono">
         <Hero />
         <About />
-        {/* <Proyectos /> */}
+        <Proyectos />
       </div>
     );
   }
