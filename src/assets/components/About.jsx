@@ -3,10 +3,10 @@ import React, { Component } from "react";
 export default class About extends Component {
   render() {
     return (
-      <div className="bg-[#020617] text-white py-10 px-4">
+      <div className="bg-[#020617] text-white py-10 px-4 md:mx-40">
         <h2 className="text-3xl pb-3">//Sobre mi</h2>
         <p className="text-sm">
-          Hola, soy Ingeniero en Sonido y Desarrollador Full Stack. Mi
+          Soy Ingeniero en Sonido y Desarrollador Full Stack. Mi
           trayectoria en el ámbito técnico del audio me dotó de una sólida
           capacidad analítica y una metodología rigurosa para la resolución de
           problemas. Actualmente, diseño y desarrollo soluciones digitales
