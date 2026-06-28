@@ -5,7 +5,7 @@ export default class Proyectos extends Component {
   render() {
     return (
       <div className="bg-[#020617] text-white py-10 px-3">
-        <h2 className="text-3xl">//Proyectos</h2>
+        <h2 className="text-3xl pb-3">//Proyectos</h2>
         <Proyecto/>
       </div>
     );
