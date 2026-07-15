@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import Proyectos from "./Proyectos";
 import Contacto from "./Contacto";
 import Hero from "../components/Hero";
