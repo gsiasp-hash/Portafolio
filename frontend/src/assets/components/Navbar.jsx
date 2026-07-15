@@ -7,7 +7,7 @@ export default function Navbar() {
   const links = [
     { label: "//Sobre mi", href: "#" },
     { label: "//Skills", href: "#" },
-    { label: "//Proyectos", href: "#" },
+    { label: "//Proyectos", href: "#proyectos" },
   ];
 
   return (
