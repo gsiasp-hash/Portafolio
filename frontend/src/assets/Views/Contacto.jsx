@@ -65,7 +65,7 @@ export default function Contacto() {
   };
 
   return (
-    <div id="contacto" className="bg-[#020617] text-white py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div id="contacto" className="bg-[#020617] text-white py-10 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto">
       <h2 className="text-3xl pb-3">//Contacto</h2>
       <p className="text-sm text-gray-400 pb-6">
         ¿Tienes un proyecto en mente o una oportunidad? Escríbeme y te

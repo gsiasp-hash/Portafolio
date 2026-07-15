@@ -5,8 +5,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { label: "//Sobre mi", href: "#" },
-    { label: "//Skills", href: "#" },
+    { label: "//Sobre mi", href: "#sobre-mi" },
+    { label: "//Skills", href: "#skills" },
     { label: "//Proyectos", href: "#proyectos" },
   ];
 

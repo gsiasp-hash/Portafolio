@@ -3,7 +3,7 @@ import { Component } from "react";
 export default class About extends Component {
   render() {
     return (
-      <div className="bg-[#020617] text-white py-10 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div id="sobre-mi" className="bg-[#020617] text-white py-10 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto">
         <h2 className="text-3xl pb-3">//Sobre mi</h2>
         <p className="text-sm">
           Soy Ingeniero en Sonido y Desarrollador Full Stack. Mi
