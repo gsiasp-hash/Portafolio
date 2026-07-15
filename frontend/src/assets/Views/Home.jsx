@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Proyectos from "./Proyectos";
+import Contacto from "./Contacto";
 import Hero from "../components/Hero";
 import About from "../components/About";
 
@@ -10,6 +11,7 @@ export default class Home extends Component {
         <Hero />
         <About />
         <Proyectos />
+        <Contacto />
       </div>
     );
   }

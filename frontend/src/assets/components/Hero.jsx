@@ -8,7 +8,7 @@ export default class Hero extends Component {
       <div className="bg-[#020617] text-white py-10 flex items-center justify-center flex-col gap-5 md:flex-row md:gap-10 lg:flex-row lg:gap-15 px-4">
         <div className="text-center md:text-left">
           <p className="text-violet-400 text-sm font-light">Mi nombre es</p>
-          <h1 className="text-[6rem] font-bold">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-bold leading-tight">
             GUILLERMO <span className="text-violet-400">SIAS</span>
           </h1>
           <h2 className="text-xs font-medium ">$ git init</h2>
@@ -24,9 +24,12 @@ export default class Hero extends Component {
             >
               Ver Proyectos
             </a>
-            <button className="bg-transparent border border-violet-950 hover:text-white hover:bg-violet-500 text-violet-700 py-2 px-4 text-sm rounded mt-5 cursor-pointer ml-2">
+            <a
+              href="#contacto"
+              className="inline-block bg-transparent border border-violet-950 hover:text-white hover:bg-violet-500 text-violet-700 py-2 px-4 text-sm rounded mt-5 cursor-pointer ml-2"
+            >
               Contactame
-            </button>
+            </a>
           </div>
         </div>
       </div>
