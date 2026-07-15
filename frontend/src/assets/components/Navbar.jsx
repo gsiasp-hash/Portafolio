@@ -24,7 +24,7 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="#" className="bg-violet-500 hover:bg-violet-700 text-white py-2 px-4 rounded">
+          <a href="#contacto" className="bg-violet-500 hover:bg-violet-700 text-white py-2 px-4 rounded">
             Contacto
           </a>
         </div>
@@ -50,7 +50,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#"
+            href="#contacto"
             className="bg-violet-500 hover:bg-violet-700 text-white py-2 px-4 rounded text-center"
             onClick={() => setOpen(false)}
           >
