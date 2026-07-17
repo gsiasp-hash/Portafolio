@@ -1,6 +1,6 @@
-import Home from "./assets/Views/Home";
-import Navbar from "./assets/components/Navbar";
-import Footer from "./assets/components/Footer";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (

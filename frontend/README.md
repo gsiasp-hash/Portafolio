@@ -1,1 +1,3 @@
-Portafolio creado con React + Tailwind + React router
+Portafolio personal de Guillermo Sias - Full Stack Developer
+
+React + Tailwind CSS + Vite
