@@ -2,27 +2,34 @@ import { skills } from "../data/skills";
 
 export default function Skills() {
   return (
-    <div id="skills" className="bg-[#020617] text-white py-16 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto">
-      <h2 className="text-3xl pb-10">//Skills</h2>
-      <div className="flex flex-col gap-10">
-        {skills.map(({ titulo, skills }) => (
-          <div key={titulo}>
-            <h3 className="text-sm uppercase tracking-wider text-gray-400 pb-4">
-              {titulo}
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
+    <section id="skills" className="text-ink py-16 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto">
+      <div className="border-b border-hairline pb-6 mb-10">
+        <h2 className="text-xs font-bold text-ink uppercase tracking-wider">
+          [+] Skills
+        </h2>
+      </div>
+      <div className="flex flex-col gap-12">
+        {skills.map(({ titulo, skills: items }) => (
+          <div key={titulo} className="border-b border-hairline pb-8 last:border-0 last:pb-0">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-accent">●</span>
+              <h3 className="text-xs font-medium text-mute uppercase tracking-wider">
+                {titulo}
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {items.map((skill) => (
                 <span
                   key={skill}
-                  className="text-sm font-medium text-violet-300 bg-violet-500/10 border border-violet-500/30 hover:border-violet-500 rounded-full px-5 py-2 transition-colors duration-300"
+                  className="text-xs font-medium text-body px-3 py-1.5 border border-accent/30 rounded-sm hover:border-accent text-accent transition-colors duration-200"
                 >
-                  {skill}
+                  [{skill}]
                 </span>
               ))}
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -23,22 +23,10 @@ export default function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-violet-500 hover:bg-violet-700 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-colors"
+          className="fixed bottom-6 right-6 z-50 bg-ink text-canvas border border-hairline-strong w-10 h-10 rounded-sm flex items-center justify-center cursor-pointer hover:bg-ink-deep transition-colors"
           aria-label="Volver arriba"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 15l7-7 7 7"
-            />
-          </svg>
+          <span className="text-lg font-bold leading-none">↑</span>
         </motion.button>
       )}
     </AnimatePresence>

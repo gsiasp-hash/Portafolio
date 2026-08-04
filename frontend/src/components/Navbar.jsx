@@ -3,10 +3,18 @@ import { useState, useEffect } from "react";
 const sectionIds = ["sobre-mi", "skills", "proyectos", "contacto"];
 
 const links = [
-  { label: "//Sobre mi", href: "#sobre-mi", id: "sobre-mi" },
-  { label: "//Skills", href: "#skills", id: "skills" },
-  { label: "//Proyectos", href: "#proyectos", id: "proyectos" },
+  { label: "Sobre mi", href: "#sobre-mi", id: "sobre-mi" },
+  { label: "Skills", href: "#skills", id: "skills" },
+  { label: "Proyectos", href: "#proyectos", id: "proyectos" },
 ];
+
+function Wordmark() {
+  return (
+    <div className="text-xs leading-none select-none">
+      [ <span className="text-accent">GS</span> ]
+    </div>
+  );
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -33,20 +41,21 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-[#020617] text-white p-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-sm">
-          <span className="text-violet-500 font-bold">GS</span>.portfolio
-        </h1>
+    <nav className="border-b border-hairline">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-14">
+        <a href="#sobre-mi" className="text-sm font-bold text-ink">
+          <Wordmark />
+        </a>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex space-x-4 text-xs font-light items-center">
+        <div className="hidden md:flex items-center gap-6 text-xs">
           {links.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className={`transition-colors duration-200 ${
-                active === l.id ? "text-white font-medium" : "text-violet-400 hover:text-gray-300"
+              className={`transition-colors duration-200 pb-0.5 ${
+                active === l.id
+                  ? "text-ink font-medium border-b-2 border-accent"
+                  : "text-mute hover:text-ink"
               }`}
             >
               {l.label}
@@ -54,38 +63,52 @@ export default function Navbar() {
           ))}
           <a
             href="#contacto"
-            className={`py-2 px-4 rounded transition-colors duration-200 ${
+            className={`transition-colors duration-200 py-2 px-4 rounded-sm border border-transparent ${
               active === "contacto"
-                ? "bg-violet-700 text-white"
-                : "bg-violet-500 hover:bg-violet-700 text-white"
+                ? "font-medium text-canvas bg-ink"
+                : "text-canvas bg-ink hover:bg-ink-deep"
             }`}
           >
             Contacto
           </a>
         </div>
 
-        {/* Burger button */}
         <button
           className="md:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
           onClick={() => setOpen(!open)}
           aria-label="Abrir menú"
           aria-expanded={open}
         >
-          <span className={`block h-0.5 w-6 bg-violet-400 transition-all duration-300 ${open ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block h-0.5 w-6 bg-violet-400 transition-all duration-300 ${open ? "opacity-0" : ""}`} />
-          <span className={`block h-0.5 w-6 bg-violet-400 transition-all duration-300 ${open ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span
+            className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
+              open ? "rotate-45 translate-y-2" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
+              open ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
+              open ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          />
         </button>
       </div>
 
-      {/* Mobile menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-60 mt-4" : "max-h-0"}`}>
-        <div className="flex flex-col gap-3 text-xs font-light pb-2">
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 border-hairline ${
+          open ? "max-h-60 border-t" : "max-h-0"
+        }`}
+      >
+        <div className="max-w-6xl mx-auto flex flex-col gap-3 text-xs px-6 py-4">
           {links.map((l) => (
             <a
               key={l.label}
               href={l.href}
               className={`transition-colors duration-200 ${
-                active === l.id ? "text-white font-medium" : "text-violet-400 hover:text-gray-300"
+                active === l.id ? "text-accent font-medium" : "text-mute hover:text-ink"
               }`}
               onClick={() => setOpen(false)}
             >
@@ -94,11 +117,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contacto"
-            className={`py-2 px-4 rounded text-center transition-colors duration-200 ${
-              active === "contacto"
-                ? "bg-violet-700 text-white"
-                : "bg-violet-500 hover:bg-violet-700 text-white"
-            }`}
+            className="py-2 px-4 rounded-sm text-center text-canvas bg-ink"
             onClick={() => setOpen(false)}
           >
             Contacto

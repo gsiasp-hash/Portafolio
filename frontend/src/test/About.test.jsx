@@ -5,7 +5,7 @@ import About from "../components/About";
 describe("About", () => {
   it("renders the section title", () => {
     render(<About />);
-    expect(screen.getByText("//Sobre mi")).toBeInTheDocument();
+    expect(screen.getByText("[+] Sobre mi")).toBeInTheDocument();
   });
 
   it("renders the bio text", () => {

@@ -12,7 +12,7 @@ describe("Hero", () => {
   it("renders the subtitle", () => {
     render(<Hero />);
     expect(
-      screen.getByText(/Full Stack Developer en formación/)
+      screen.getByText(/Full Stack Developer/)
     ).toBeInTheDocument();
   });
 

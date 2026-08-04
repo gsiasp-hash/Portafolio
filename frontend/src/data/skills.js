@@ -9,7 +9,7 @@ export const skills = [
   },
   {
     titulo: "Frameworks y librerías",
-    skills: ["React", "Bootstrap", "Tailwind"],
+    skills: ["React", "React Router", "Bootstrap", "Tailwind"],
   },
   {
     titulo: "Especialidades",

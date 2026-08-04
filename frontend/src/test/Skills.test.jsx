@@ -5,7 +5,7 @@ import Skills from "../pages/Skills";
 describe("Skills", () => {
   it("renders the section title", () => {
     render(<Skills />);
-    expect(screen.getByText("//Skills")).toBeInTheDocument();
+    expect(screen.getByText("[+] Skills")).toBeInTheDocument();
   });
 
   it("renders skill categories", () => {
@@ -17,8 +17,8 @@ describe("Skills", () => {
 
   it("renders individual skills", () => {
     render(<Skills />);
-    expect(screen.getByText("JavaScript")).toBeInTheDocument();
-    expect(screen.getByText("React")).toBeInTheDocument();
-    expect(screen.getByText("Tailwind")).toBeInTheDocument();
+    expect(screen.getByText(/JavaScript/)).toBeInTheDocument();
+    expect(screen.getAllByText(/React/)).toHaveLength(2); // React and React Router
+    expect(screen.getByText(/Tailwind/)).toBeInTheDocument();
   });
 });
