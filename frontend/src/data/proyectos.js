@@ -5,7 +5,7 @@ export const proyectos = [
       "Aplicación web de pedidos de pizza a domicilio con catálogo, carrito de compra y flujo de checkout, desplegada en producción.",
     imagen: "https://opengraph.githubassets.com/1/gsiasp-hash/pizzeria",
     tecnologias: ["JavaScript", "HTML", "CSS"],
-    demoUrl: "https://pizzeria-cydert.vercel.app",
+    demoUrl: "https://pizzeria-blush-kappa.vercel.app/",
     repoUrl: "https://github.com/gsiasp-hash/pizzeria",
   },
   {
