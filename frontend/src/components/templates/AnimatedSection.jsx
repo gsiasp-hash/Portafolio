@@ -1,4 +1,4 @@
-import FadeContent from "./rb/FadeContent";
+import FadeContent from "../rb/FadeContent";
 
 export default function AnimatedSection({ children, className = "" }) {
   return (

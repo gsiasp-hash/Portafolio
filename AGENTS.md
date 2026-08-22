@@ -31,15 +31,20 @@ Verificación obligatoria antes de dar una tarea por terminada: `npm run lint` +
 
 ```
 frontend/src/
-├── components/       # Hero, About, Skills, Proyecto, Navbar, Footer, ScrollToTop
-│   └── rb/           # Componentes React Bits convertidos a .jsx (Particles, FadeContent)
-├── pages/            # Home, Skills, Proyectos, Contacto
-├── data/             # proyectos.js, skills.js
-├── css/style.css     # Tokens @theme + JetBrains Mono + base
-└── test/             # Tests de componentes
+├── components/          # Arquitectura Atomic Design
+│   ├── atoms/           # Button, Chip, SectionHeader, NavLink
+│   ├── molecules/       # ProjectCard, SkillGroup, InfoCard, ContactCard, MobileMenu
+│   ├── organisms/       # Navbar, Hero, About, Skills, Projects, Contact, Footer, ScrollToTop
+│   ├── templates/       # MainTemplate, AnimatedSection
+│   └── rb/              # Componentes React Bits convertidos a .jsx (Particles, FadeContent)
+├── pages/               # Home (compone organisms con AnimatedSection)
+├── data/                # proyectos.js, skills.js, contacto.js (email + enlaces)
+├── css/style.css        # Tokens @theme + JetBrains Mono + base
+└── test/                # Tests de componentes
 ```
 
-- `App.jsx`: fondo `Particles` (fixed, z-0) + contenido `relative z-10`.
+- `App.jsx`: monta `MainTemplate` con `Home` dentro.
+- `MainTemplate`: fondo `Particles` (fixed, z-0) + contenido `relative z-10` con Navbar y Footer.
 - Secciones con transición `AnimatedSection` (GSAP/ScrollTrigger, una sola vez).
 - `index.html`: OG/Twitter meta (dominio `guillermosias.dev`).
 

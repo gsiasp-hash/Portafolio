@@ -47,25 +47,41 @@ Este proyecto usa **componentes oficiales de [React Bits](https://reactbits.dev)
 
 ```
 src/
-├── components/
-│   ├── rb/                    # Componentes React Bits (wrappers)
-│   │   ├── Particles.jsx      # Fondo de partículas (config: azul disperso)
-│   │   └── FadeContent.jsx    # Transición GSAP/ScrollTrigger
-│   ├── AnimatedSection.jsx    # Wrapper que usa FadeContent internamente
-│   ├── Hero.jsx               # Hero simplificado (sin TUI/consola)
-│   ├── About.jsx
-│   ├── Skills.jsx
-│   ├── Proyecto.jsx
-│   ├── Navbar.jsx
-│   ├── Footer.jsx
-│   └── ScrollToTop.jsx        # Sigue usando Framer Motion
+├── components/                  # Arquitectura Atomic Design
+│   ├── atoms/
+│   │   ├── Button.jsx           # variantes primary/secondary/ghost; href ⇒ <a>
+│   │   ├── Chip.jsx             # badges de tecnologías y pills de skills
+│   │   ├── SectionHeader.jsx    # encabezado "[+] Título"
+│   │   └── NavLink.jsx          # link con estado activo (desktop/móvil)
+│   ├── molecules/
+│   │   ├── ProjectCard.jsx      # tarjeta de proyecto (Chip + Button)
+│   │   ├── SkillGroup.jsx       # grupo ● título + chips
+│   │   ├── InfoCard.jsx         # tarjetas de stats en About
+│   │   ├── ContactCard.jsx      # tarjeta de enlace de contacto
+│   │   └── MobileMenu.jsx       # panel colapsable del Navbar
+│   ├── organisms/
+│   │   ├── Navbar.jsx           # links + CTA "Contacto" + MobileMenu
+│   │   ├── Hero.jsx             # nombre, subtítulo, 3 CTAs (Button)
+│   │   ├── About.jsx            # bio + InfoCards
+│   │   ├── Skills.jsx           # consume data/skills.js → SkillGroup
+│   │   ├── Projects.jsx         # consume data/proyectos.js → ProjectCard
+│   │   ├── Contact.jsx          # CTA email + ContactCards (data/contacto.js)
+│   │   ├── Footer.jsx           # wordmark + enlaces de data/contacto.js
+│   │   └── ScrollToTop.jsx      # sigue usando Framer Motion
+│   ├── templates/
+│   │   ├── MainTemplate.jsx     # Particles fixed z-0 + Navbar + main + Footer
+│   │   └── AnimatedSection.jsx  # Wrapper que usa FadeContent internamente
+│   └── rb/                      # Componentes React Bits (wrappers)
+│       ├── Particles.jsx        # Fondo de partículas (config: azul disperso)
+│       └── FadeContent.jsx      # Transición GSAP/ScrollTrigger
 ├── pages/
-│   ├── Home.jsx               # Orquesta secciones con AnimatedSection
-│   ├── Skills.jsx
-│   ├── Proyectos.jsx
-│   └── Contacto.jsx
-├── App.jsx                    # Monta Particles fixed + Navbar + Home + Footer
-└── css/style.css              # Tokens @theme + JetBrains Mono + base
+│   └── Home.jsx                 # Orquesta organisms con AnimatedSection
+├── data/
+│   ├── proyectos.js
+│   ├── skills.js
+│   └── contacto.js              # EMAIL + enlaces GitHub/LinkedIn
+├── App.jsx                      # Monta MainTemplate con Home dentro
+└── css/style.css                # Tokens @theme + JetBrains Mono + base
 ```
 
 ### Particles (fondo)
@@ -105,16 +121,17 @@ src/
 ## Estructura de la página
 
 ```
-App.jsx
+App.jsx → MainTemplate
 ├── Particles (fixed full-screen background, z-0)
 ├── Navbar (sticky, hairline bottom, links + CTA "Contacto")
-├── Home.jsx
-│   ├── Hero (nombre, subtitle tech stack, 3 CTAs)
-│   ├── AnimatedSection → About
-│   ├── AnimatedSection → Skills
-│   ├── AnimatedSection → Proyectos
-│   ├── AnimatedSection → Contacto
-│   └── ScrollToTop
+├── main
+│   └── Home.jsx
+│       ├── Hero (nombre, subtitle tech stack, 3 CTAs)
+│       ├── AnimatedSection → About
+│       ├── AnimatedSection → Skills
+│       ├── AnimatedSection → Projects
+│       ├── AnimatedSection → Contact
+│       └── ScrollToTop
 └── Footer (hairline top, links acento azul)
 ```
 

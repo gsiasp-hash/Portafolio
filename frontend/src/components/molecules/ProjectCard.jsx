@@ -1,4 +1,14 @@
-export default function Proyecto({ nombre, descripcion, imagen, tecnologias, demoUrl, repoUrl }) {
+import Button from "../atoms/Button";
+import Chip from "../atoms/Chip";
+
+export default function ProjectCard({
+  nombre,
+  descripcion,
+  imagen,
+  tecnologias,
+  demoUrl,
+  repoUrl,
+}) {
   return (
     <article className="border border-hairline rounded-none overflow-hidden flex flex-col hover:border-accent transition-colors duration-300">
       <img
@@ -15,33 +25,26 @@ export default function Proyecto({ nombre, descripcion, imagen, tecnologias, dem
         <p className="text-sm text-body grow leading-relaxed">{descripcion}</p>
         <div className="flex flex-wrap gap-2">
           {tecnologias.map((tech) => (
-            <span
-              key={tech}
-              className="text-xs font-medium text-accent px-2 py-1 border border-accent/30 rounded-sm hover:bg-accent/5 transition-colors duration-200"
-            >
+            <Chip key={tech} className="px-2 py-1 hover:bg-accent/5">
               {tech}
-            </span>
+            </Chip>
           ))}
         </div>
         <div className="flex gap-3 pt-2 border-t border-hairline">
           {demoUrl && (
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex-1 text-center bg-ink text-canvas hover:bg-ink-deep py-2 px-4 rounded-sm text-sm font-medium transition-colors duration-200"
-            >
+            <Button size="sm" href={demoUrl} target="_blank" rel="noreferrer">
               Ver demo
-            </a>
+            </Button>
           )}
-          <a
+          <Button
+            size="sm"
+            variant="secondary"
             href={repoUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex-1 text-center border border-accent text-accent hover:bg-accent hover:text-canvas py-2 px-4 rounded-sm text-sm font-medium transition-colors duration-200"
           >
             Código
-          </a>
+          </Button>
         </div>
       </div>
     </article>

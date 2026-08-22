@@ -1,10 +1,10 @@
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Skills from "./Skills";
-import Proyectos from "./Proyectos";
-import Contacto from "./Contacto";
-import ScrollToTop from "../components/ScrollToTop";
-import AnimatedSection from "../components/AnimatedSection";
+import AnimatedSection from "../components/templates/AnimatedSection";
+import Hero from "../components/organisms/Hero";
+import About from "../components/organisms/About";
+import Skills from "../components/organisms/Skills";
+import Projects from "../components/organisms/Projects";
+import Contact from "../components/organisms/Contact";
+import ScrollToTop from "../components/organisms/ScrollToTop";
 
 export default function Home() {
   return (
@@ -17,10 +17,10 @@ export default function Home() {
         <Skills />
       </AnimatedSection>
       <AnimatedSection>
-        <Proyectos />
+        <Projects />
       </AnimatedSection>
       <AnimatedSection>
-        <Contacto />
+        <Contact />
       </AnimatedSection>
       <ScrollToTop />
     </div>
