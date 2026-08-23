@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 const CHAT_URL =
   "https://entrevista-ia-flax.vercel.app?embed=1";
@@ -8,9 +8,23 @@ const CHAT_HOME = "https://entrevista-ia-flax.vercel.app";
 const TEASER_KEY = "chat_teaser_visto";
 const TEASER_DELAY_MS = 2000;
 
+function suscribir(callback) {
+  window.addEventListener("storage", callback);
+  return () => window.removeEventListener("storage", callback);
+}
+
+function leerPrimeraVisita() {
+  try {
+    return localStorage.getItem(TEASER_KEY) !== "1";
+  } catch {
+    return true;
+  }
+}
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [showTeaser, setShowTeaser] = useState(false);
+  const pulsar = useSyncExternalStore(suscribir, leerPrimeraVisita, () => true);
 
   useEffect(() => {
     let visto;
@@ -100,7 +114,7 @@ export default function ChatWidget() {
           </a>
         )}
         <span className="relative inline-flex">
-          {!open && (
+          {!open && pulsar && (
             <span
               aria-hidden="true"
               className="motion-safe:absolute motion-safe:inset-0 motion-safe:animate-ping rounded-sm bg-accent opacity-60"

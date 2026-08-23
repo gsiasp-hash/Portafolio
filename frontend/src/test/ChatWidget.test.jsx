@@ -91,6 +91,33 @@ describe("ChatWidget", () => {
     expect(localStorage.getItem("chat_teaser_visto")).toBe("1");
   });
 
+  it("pulsa solo hasta la primera interacción; después nunca más", async () => {
+    const user = userEvent.setup();
+    render(<ChatWidget />);
+
+    expect(document.querySelector("[class*=animate-ping]")).toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /hablar con el asistente/i }));
+    expect(document.querySelector("[class*=animate-ping]")).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /cerrar asistente/i }));
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(document.querySelector("[class*=animate-ping]")).not.toBeInTheDocument();
+  });
+
+  it("no pulsa ni muestra teaser para visitantes recurrentes", () => {
+    localStorage.setItem("chat_teaser_visto", "1");
+    vi.useFakeTimers();
+
+    render(<ChatWidget />);
+    act(() => {
+      vi.advanceTimersByTime(5000);
+    });
+
+    expect(document.querySelector("[class*=animate-ping]")).not.toBeInTheDocument();
+    expect(screen.queryByText(/Preguntale lo que quieras/i)).not.toBeInTheDocument();
+  });
+
   it("no muestra el teaser si ya fue visto antes", () => {
     localStorage.setItem("chat_teaser_visto", "1");
     vi.useFakeTimers();
