@@ -1,10 +1,19 @@
 export const proyectos = [
   {
+    nombre: "Asistente RAG",
+    descripcion:
+      "Asistente de soporte al cliente basado en RAG: indexa PDFs de conocimiento y responde en un chat con streaming, memoria conversacional y búsqueda vectorial sobre pgvector.",
+    imagen: "https://opengraph.githubassets.com/1/gsiasp-hash/Asistente-clientes-RAG",
+    tecnologias: ["TypeScript", "Next.js", "React", "Supabase", "Groq"],
+    demoUrl: "https://asistente-rag-plum.vercel.app",
+    repoUrl: "https://github.com/gsiasp-hash/Asistente-clientes-RAG",
+  },
+  {
     nombre: "Pizzeria",
     descripcion:
-      "Aplicación web de pedidos de pizza a domicilio con catálogo, carrito de compra y flujo de checkout, desplegada en producción.",
+      "Aplicación full-stack de pedidos de pizza con catálogo, carrito y checkout, autenticación JWT y API REST propia en Express.",
     imagen: "https://opengraph.githubassets.com/1/gsiasp-hash/pizzeria",
-    tecnologias: ["JavaScript", "HTML", "CSS"],
+    tecnologias: ["React", "Node.js", "Express", "Tailwind CSS", "JWT"],
     demoUrl: "https://pizzeria-blush-kappa.vercel.app/",
     repoUrl: "https://github.com/gsiasp-hash/pizzeria",
   },
