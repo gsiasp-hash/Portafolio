@@ -1,7 +1,7 @@
 export const EMAIL = "g.siasp@gmail.com";
 
 export const enlaces = [
-  { label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
+  { label: "Email", value: EMAIL, href: `mailto:${EMAIL}`, copy: true },
   {
     label: "GitHub",
     value: "gsiasp-hash",

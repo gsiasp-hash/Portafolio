@@ -23,9 +23,21 @@ export default defineConfig([
     },
   },
   {
+    files: ["src/app/api/**/*.js"],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  {
     files: ["src/app/**/*.{js,jsx}"],
     rules: {
       "react-refresh/only-export-components": "off",
+    },
+  },
+  {
+    files: ["src/test/**/*.{js,jsx}"],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node, ...globals.jest },
     },
   },
 ]);

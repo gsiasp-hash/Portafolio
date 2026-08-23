@@ -42,6 +42,7 @@ frontend/src/
 │   └── rb/              # Componentes React Bits convertidos a .jsx (Particles, FadeContent)
 ├── sections/              # Home (compone organisms con AnimatedSection)
 ├── data/                  # proyectos.js, skills.js, contacto.js (email + enlaces)
+├── app/api/contact/route.js  # POST del formulario de contacto (Resend, honeypot, server-only)
 ├── css/style.css          # Tokens @theme + JetBrains Mono (@import Google Fonts) + base
 └── test/                  # Tests de componentes
 ```
@@ -61,7 +62,8 @@ frontend/src/
 - **Radio:** `4px` en interactivos, `0px` en contenedores.
 - **Componentes React Bits:** están convertidos de TSX a JSX **sin modificar lógica ni GLSL**; si se necesitan otros, convertir igual que `rb/` y documentar.
 - **Estilo de código:** archivos `.jsx`/`.js`, sin comentarios salvo que se pidan, seguir estilo de los vecinos.
-- **No** tocar `package-lock.json` salvo instalaciones reales (vía `npm i <paquete>`).
+- **Formulario de contacto:** `ContactForm` (client) → `POST /api/contact` → API de Resend vía fetch nativo. `RESEND_API_KEY` y `CONTACT_TO` viven solo en env vars de Vercel — nunca en el repo ni en el bundle. Honeypot (`empresa`) validado server-side; sin dominio verificado el remitente es `onboarding@resend.dev` (envía únicamente al destinatario propio).
+- **No** tocar `package-lock.json` salvo instalaciones reales (vía `npm i <paquete>`). El lockfile está sincronizado con npm 10 (Node 20 del CI) — si se regenera, validar también con `npx npm@10 ci --dry-run`.
 
 ## Seguridad e información sensible
 

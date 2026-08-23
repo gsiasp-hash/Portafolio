@@ -1,6 +1,8 @@
 import Button from "../atoms/Button";
+import { enlaces } from "../../data/contacto";
 
 export default function Hero() {
+  const sociales = enlaces.filter(({ label }) => label !== "Email");
   return (
     <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
       <div className="text-center md:text-left">
@@ -28,9 +30,21 @@ export default function Hero() {
           <Button variant="secondary" href="#contacto">
             Contactame
           </Button>
-          <Button variant="ghost" href="/cv-guillermo-sias.pdf" download>
-            Descargar CV
-          </Button>
+        </div>
+
+        <div className="mt-4 flex gap-2 justify-center md:justify-start">
+          {sociales.map(({ label, href }) => (
+            <Button
+              key={label}
+              size="sm"
+              variant="ghost"
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {label}
+            </Button>
+          ))}
         </div>
       </div>
     </section>
