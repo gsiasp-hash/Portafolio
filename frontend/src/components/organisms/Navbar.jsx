@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Button from "../atoms/Button";
 import NavLink from "../atoms/NavLink";
 import MobileMenu from "../molecules/MobileMenu";
+import ThemeToggle from "../atoms/ThemeToggle";
 
 const sectionIds = ["sobre-mi", "skills", "proyectos", "contacto"];
 
@@ -57,30 +58,34 @@ export default function Navbar() {
           >
             Contacto
           </Button>
+          <ThemeToggle />
         </div>
 
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-1 cursor-pointer"
-          onClick={() => setOpen(!open)}
-          aria-label="Abrir menú"
-          aria-expanded={open}
-        >
-          <span
-            className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
-              open ? "rotate-45 translate-y-2" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
-              open ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
-              open ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          />
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
+          <button
+            className="flex flex-col gap-1.5 p-1 cursor-pointer"
+            onClick={() => setOpen(!open)}
+            aria-label="Abrir menú"
+            aria-expanded={open}
+          >
+            <span
+              className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
+                open ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
+                open ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-ink transition-all duration-300 ${
+                open ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
+          </button>
+        </div>
       </div>
 
       <MobileMenu

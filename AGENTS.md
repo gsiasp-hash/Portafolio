@@ -57,6 +57,7 @@ frontend/src/
 - **Diseño:** seguir `frontend/DESIGN.md` y los tokens de `README.md` (`canvas`, `ink`, `body`, `accent`, etc.).
 - **Color:** solo azul `#007aff` como acento vivo. Sin sombras, sin degradados.
 - **Tipografía:** JetBrains Mono en toda la app.
+- **Tema:** oscuro por defecto. El script inline de `layout.jsx` agrega `class="dark"` a `<html>` antes del primer paint salvo que `localStorage.theme === "light"`. Los tokens claros viven en `@theme`; los oscuros sobrescriben las mismas variables CSS dentro de `.dark` en `style.css` — así todas las utilidades (`text-ink`, `bg-canvas`, etc.) se invierten solas sin tocar componentes. Toggle: átomo `ThemeToggle` (en Navbar).
 - **Radio:** `4px` en interactivos, `0px` en contenedores.
 - **Componentes React Bits:** están convertidos de TSX a JSX **sin modificar lógica ni GLSL**; si se necesitan otros, convertir igual que `rb/` y documentar.
 - **Estilo de código:** archivos `.jsx`/`.js`, sin comentarios salvo que se pidan, seguir estilo de los vecinos.

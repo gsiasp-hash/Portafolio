@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import MainTemplate from "../components/templates/MainTemplate";
+import ScrollProgress from "../components/organisms/ScrollProgress";
 import "../css/style.css";
 
 export const metadata = {
@@ -42,10 +43,16 @@ export const viewport = {
   themeColor: "#020617",
 };
 
+const themeInitScript = `(function(){try{if(localStorage.getItem("theme")!=="light"){document.documentElement.classList.add("dark")}}catch(e){document.documentElement.classList.add("dark")}})();`;
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
+        <ScrollProgress />
         <div className="min-h-screen text-ink relative">
           <Analytics />
           <MainTemplate>{children}</MainTemplate>

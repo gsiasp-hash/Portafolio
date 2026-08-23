@@ -19,7 +19,7 @@ export default function Button({
   children,
   ...props
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 ${sizes[size]} rounded-sm text-sm font-medium cursor-pointer transition-colors duration-200 ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 ${sizes[size]} rounded-sm text-sm font-medium cursor-pointer transition-all duration-200 active:scale-[0.98] ${variants[variant]} ${className}`;
 
   if (href) {
     return (
