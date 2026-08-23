@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import MainTemplate from "../components/templates/MainTemplate";
 import ScrollProgress from "../components/organisms/ScrollProgress";
+import ChatWidget from "../components/organisms/ChatWidget";
 import "../css/style.css";
 
 export const metadata = {
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
           <Analytics />
           <MainTemplate>{children}</MainTemplate>
         </div>
+        <ChatWidget />
       </body>
     </html>
   );

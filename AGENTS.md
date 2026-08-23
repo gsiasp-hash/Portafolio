@@ -63,6 +63,7 @@ frontend/src/
 - **Componentes React Bits:** están convertidos de TSX a JSX **sin modificar lógica ni GLSL**; si se necesitan otros, convertir igual que `rb/` y documentar.
 - **Estilo de código:** archivos `.jsx`/`.js`, sin comentarios salvo que se pidan, seguir estilo de los vecinos.
 - **Formulario de contacto:** `ContactForm` (client) → `POST /api/contact` → API de Resend vía fetch nativo. `RESEND_API_KEY` y `CONTACT_TO` viven solo en env vars de Vercel — nunca en el repo ni en el bundle. Honeypot (`empresa`) validado server-side; sin dominio verificado el remitente es `onboarding@resend.dev` (envía únicamente al destinatario propio).
+- **Widget flotante de entrevista-ia:** `ChatWidget` (client, montado en `layout.jsx`) abre la instancia privada del asistente RAG en un iframe lazy con `?embed=1`. FAB azul sólido (`bg-accent`, único elemento azul-relleno del sitio) con anillo `animate-ping` cuando está cerrado; burbuja teaser de primer contacto descartable (persistencia en `localStorage.chat_teaser_visto`). El nombre visible es simplemente "asistente". Las URLs viven en las constantes `CHAT_URL`/`CHAT_HOME` del componente. Repo privado: `gsiasp-hash/entrevista-ia`.
 - **No** tocar `package-lock.json` salvo instalaciones reales (vía `npm i <paquete>`). El lockfile está sincronizado con npm 10 (Node 20 del CI) — si se regenera, validar también con `npx npm@10 ci --dry-run`.
 
 ## Seguridad e información sensible
