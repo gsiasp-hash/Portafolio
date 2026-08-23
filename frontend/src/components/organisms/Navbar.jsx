@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import Button from "../atoms/Button";
 import NavLink from "../atoms/NavLink";

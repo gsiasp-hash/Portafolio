@@ -4,21 +4,23 @@ Portafolio personal de Guillermo Sias (Full Stack Developer). Todo el código vi
 
 ## Stack
 
-- React 19 + Vite 8
-- Tailwind CSS v4 (plugin `@tailwindcss/vite`)
+- Next.js 16 (App Router) + React 19 — JSX sin TypeScript
+- Tailwind CSS v4 (plugin `@tailwindcss/postcss`)
 - Framer Motion, GSAP + ScrollTrigger, OGL (partículas)
-- Testing: Vitest + React Testing Library (jsdom)
+- Testing: Vitest + React Testing Library (jsdom) (`vitest.config.mjs` con `@vitejs/plugin-react`, solo para tests)
 - Lint: ESLint + Prettier (hooks: Husky + lint-staged)
-- Deploy: Vercel (`vercel.json`, SPA rewrites)
+- Deploy: Vercel (framework Next.js, output autodetectado)
+
+**Importante:** usar bundler **webpack** (`--webpack` en `dev` y `build`). Turbopack tiene un bug abierto con `@tailwindcss/postcss` en este setup (`FileSystemPath("") ... leaves the filesystem root` al compilar el CSS). No quitar el flag sin verificar un build verde.
 
 ## Comandos
 
 Todos se ejecutan desde `frontend/`:
 
 ```bash
-npm run dev        # servidor de desarrollo
-npm run build      # build producción → dist/
-npm run preview    # preview del build
+npm run dev        # servidor de desarrollo (next dev --webpack)
+npm run build      # build producción (next build --webpack)
+npm start          # sirve el build de producción
 npm run test       # Vitest (run)
 npm run test:watch
 npm run lint       # ESLint
@@ -31,22 +33,24 @@ Verificación obligatoria antes de dar una tarea por terminada: `npm run lint` +
 
 ```
 frontend/src/
-├── components/          # Arquitectura Atomic Design
+├── app/                   # App Router: layout.jsx (metadata OG, Analytics) + page.jsx
+├── components/            # Arquitectura Atomic Design
 │   ├── atoms/           # Button, Chip, SectionHeader, NavLink
 │   ├── molecules/       # ProjectCard, SkillGroup, InfoCard, ContactCard, MobileMenu
 │   ├── organisms/       # Navbar, Hero, About, Skills, Projects, Contact, Footer, ScrollToTop
 │   ├── templates/       # MainTemplate, AnimatedSection
 │   └── rb/              # Componentes React Bits convertidos a .jsx (Particles, FadeContent)
-├── pages/               # Home (compone organisms con AnimatedSection)
-├── data/                # proyectos.js, skills.js, contacto.js (email + enlaces)
-├── css/style.css        # Tokens @theme + JetBrains Mono + base
-└── test/                # Tests de componentes
+├── sections/              # Home (compone organisms con AnimatedSection)
+├── data/                  # proyectos.js, skills.js, contacto.js (email + enlaces)
+├── css/style.css          # Tokens @theme + JetBrains Mono (@import Google Fonts) + base
+└── test/                  # Tests de componentes
 ```
 
-- `App.jsx`: monta `MainTemplate` con `Home` dentro.
+- `app/layout.jsx`: `<html lang="es">`, metadata OG/Twitter vía `export const metadata` (`metadataBase: guillermosias.dev`) y `<Analytics />` de Vercel. Envuelve todo en `MainTemplate`.
 - `MainTemplate`: fondo `Particles` (fixed, z-0) + contenido `relative z-10` con Navbar y Footer.
 - Secciones con transición `AnimatedSection` (GSAP/ScrollTrigger, una sola vez).
-- `index.html`: OG/Twitter meta (dominio `guillermosias.dev`).
+- `"use client"` solo donde hace falta: `rb/Particles`, `rb/FadeContent`, `organisms/Navbar`, `organisms/ScrollToTop`. Todo lo demás es Server Component.
+- NO crear carpeta `pages/`: Next la interpretaría como Pages Router (ruta fantasma). Las vistas viven en `sections/`.
 
 ## Convenciones
 

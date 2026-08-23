@@ -22,4 +22,10 @@ export default defineConfig([
       ...prettier.rules,
     },
   },
+  {
+    files: ["src/app/**/*.{js,jsx}"],
+    rules: {
+      "react-refresh/only-export-components": "off",
+    },
+  },
 ]);
