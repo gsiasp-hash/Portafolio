@@ -1,7 +1,7 @@
 const variants = {
   primary: "bg-ink text-canvas hover:bg-ink-deep",
   secondary:
-    "border border-accent text-accent hover:bg-accent hover:text-canvas",
+    "border border-accent text-accent hover:bg-accent hover:text-black",
   ghost:
     "border border-hairline-strong text-mute hover:text-ink hover:border-ink",
 };

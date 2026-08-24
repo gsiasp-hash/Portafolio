@@ -70,7 +70,3 @@ body {
   background-color: var(--color-ink);
   color: var(--color-canvas);
 }
-
-.text-accent { color: var(--color-accent); }
-.bg-accent { background-color: var(--color-accent); }
-.border-accent { border-color: var(--color-accent); }
