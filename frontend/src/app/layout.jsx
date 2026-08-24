@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import MainTemplate from "../components/templates/MainTemplate";
 import ScrollProgress from "../components/organisms/ScrollProgress";
 import ChatWidget from "../components/organisms/ChatWidget";
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
         <ScrollProgress />
         <div className="min-h-screen text-ink relative">
           <Analytics />
+          <SpeedInsights />
           <MainTemplate>{children}</MainTemplate>
         </div>
         <ChatWidget />
