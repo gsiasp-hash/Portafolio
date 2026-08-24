@@ -1,22 +1,30 @@
 export const skills = [
   {
     titulo: "Lenguajes",
-    skills: ["HTML", "CSS", "JavaScript"],
+    skills: ["HTML", "CSS", "JavaScript", "TypeScript"],
+  },
+  {
+    titulo: "Frameworks y librerías",
+    skills: ["React", "Next.js", "React Router", "Bootstrap", "Tailwind CSS"],
+  },
+  {
+    titulo: "Backend y datos",
+    skills: ["Node.js", "Express", "REST APIs", "JWT", "PostgreSQL", "Supabase"],
+  },
+  {
+    titulo: "IA generativa",
+    skills: ["RAG", "Embeddings", "Gemini", "Groq"],
+  },
+  {
+    titulo: "Especialidades",
+    skills: ["Programación agéntica", "Testing (Vitest)", "Deploys"],
   },
   {
     titulo: "Control de versiones",
     skills: ["Git", "GitHub"],
   },
   {
-    titulo: "Frameworks y librerías",
-    skills: ["React", "React Router", "Bootstrap", "Tailwind"],
-  },
-  {
-    titulo: "Especialidades",
-    skills: ["Programación agéntica", "Consumo de APIs", "Deploys"],
-  },
-  {
     titulo: "Plataformas",
-    skills: ["Shopify", "WordPress (Elementor)"],
+    skills: ["Shopify", "WordPress (Elementor)", "Vercel"],
   },
 ];

@@ -11,7 +11,7 @@ describe("About", () => {
   it("renders the bio text", () => {
     render(<About />);
     expect(
-      screen.getByText(/Ingeniero en Sonido y Desarrollador Full Stack/)
+      screen.getByText(/Ingeniero en Sonido y Desarrollador Front End titulado/)
     ).toBeInTheDocument();
   });
 });
