@@ -17,11 +17,21 @@ export async function generateMetadata({ params }) {
   return {
     title: `${proyecto.nombre} | Guillermo Sias`,
     description: proyecto.descripcion,
+    keywords: [...proyecto.tecnologias, "portafolio", "proyecto"],
     openGraph: {
       title: `${proyecto.nombre} | Guillermo Sias`,
       description: proyecto.descripcion,
       type: "website",
       images: [{ url: proyecto.imagen }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${proyecto.nombre} | Guillermo Sias`,
+      description: proyecto.descripcion,
+      images: [proyecto.imagen],
+    },
+    alternates: {
+      canonical: `https://portfolio-cydert.vercel.app/proyectos/${slug}`,
     },
   };
 }
