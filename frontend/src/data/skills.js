@@ -13,7 +13,7 @@ export const skills = [
   },
   {
     titulo: "IA generativa",
-    skills: ["RAG", "Embeddings", "Gemini", "Groq"],
+    skills: ["RAG", "Embeddings", "Gemini", "Groq", "opencode"],
   },
   {
     titulo: "Especialidades",

@@ -1,9 +1,13 @@
 import Chip from "../atoms/Chip";
+import SpotlightCard from "../rb/SpotlightCard";
+import GlareHover from "../rb/GlareHover";
 
-export default function SkillGroup({ titulo, items }) {
+export default function SkillGroup({ titulo, items, className = "" }) {
   return (
-    <div className="border-b border-hairline pb-8 last:border-0 last:pb-0">
-      <div className="flex items-center gap-3 mb-4">
+    <SpotlightCard
+      className={`border border-hairline rounded-none p-6 transition-colors duration-300 ${className}`}
+    >
+      <div className="flex items-center gap-3 mb-5">
         <span className="text-accent">●</span>
         <h3 className="text-xs font-medium text-mute uppercase tracking-wider">
           {titulo}
@@ -11,11 +15,11 @@ export default function SkillGroup({ titulo, items }) {
       </div>
       <div className="flex flex-wrap gap-2">
         {items.map((skill) => (
-          <Chip key={skill} className="px-3 py-1.5 hover:border-accent">
-            [{skill}]
-          </Chip>
+          <GlareHover key={skill} className="rounded-sm" borderRadius="0.375rem">
+            <Chip className="px-3 py-1.5 hover:border-accent">[{skill}]</Chip>
+          </GlareHover>
         ))}
       </div>
-    </div>
+    </SpotlightCard>
   );
 }

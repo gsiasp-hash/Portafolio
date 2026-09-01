@@ -39,7 +39,7 @@ frontend/src/
 │   ├── molecules/       # ProjectCard, SkillGroup, InfoCard, ContactCard, MobileMenu
 │   ├── organisms/       # Navbar, Hero, About, Skills, Projects, Contact, Footer, ScrollToTop
 │   ├── templates/       # MainTemplate, AnimatedSection
-│   └── rb/              # Componentes React Bits convertidos a .jsx (Particles, FadeContent)
+│   └── rb/              # Componentes React Bits convertidos a .jsx (Particles, FadeContent, SpotlightCard, GlareHover, ScrambledText)
 ├── sections/              # Home (compone organisms con AnimatedSection)
 ├── data/                  # proyectos.js, skills.js, contacto.js (email + enlaces)
 ├── app/api/contact/route.js  # POST del formulario de contacto (Resend, honeypot, server-only)
@@ -49,8 +49,8 @@ frontend/src/
 
 - `app/layout.jsx`: `<html lang="es">`, metadata OG/Twitter vía `export const metadata` (`metadataBase: guillermosias.dev`) y `<Analytics />` de Vercel. Envuelve todo en `MainTemplate`.
 - `MainTemplate`: fondo `Particles` (fixed, z-0) + contenido `relative z-10` con Navbar y Footer.
-- Secciones con transición `AnimatedSection` (GSAP/ScrollTrigger, una sola vez).
-- `"use client"` solo donde hace falta: `rb/Particles`, `rb/FadeContent`, `organisms/Navbar`, `organisms/ScrollToTop`. Todo lo demás es Server Component.
+- Secciones con transición `AnimatedSection` (GSAP/ScrollTrigger, una sola vez). `AnimatedSectionUp` (en el mismo archivo) usa un solo ScrollTrigger + timeline para animar a los hijos directos con `stagger` (slide-up), con fallback por `isInViewport`.
+- `"use client"` solo donde hace falta: `rb/Particles`, `rb/FadeContent`, `templates/AnimatedSection` (usa hooks), `rb/SpotlightCard`, `rb/GlareHover`, `rb/ScrambledText`, `organisms/Navbar`, `organisms/ScrollToTop`. Todo lo demás es Server Component.
 - NO crear carpeta `pages/`: Next la interpretaría como Pages Router (ruta fantasma). Las vistas viven en `sections/`.
 
 ## Convenciones
@@ -60,7 +60,9 @@ frontend/src/
 - **Tipografía:** JetBrains Mono en toda la app.
 - **Tema:** oscuro por defecto. El script inline de `layout.jsx` agrega `class="dark"` a `<html>` antes del primer paint salvo que `localStorage.theme === "light"`. Los tokens claros viven en `@theme`; los oscuros sobrescriben las mismas variables CSS dentro de `.dark` en `style.css` — así todas las utilidades (`text-ink`, `bg-canvas`, etc.) se invierten solas sin tocar componentes. Toggle: átomo `ThemeToggle` (en Navbar).
 - **Radio:** `4px` en interactivos, `0px` en contenedores.
-- **Componentes React Bits:** están convertidos de TSX a JSX **sin modificar lógica ni GLSL**; si se necesitan otros, convertir igual que `rb/` y documentar.
+- **Componentes React Bits:** están convertidos de TSX a JSX **sin modificar lógica ni GLSL**; si se necesitan otros, convertir igual que `rb/` y documentar. `ScrambledText` usa GSAP (SplitText + ScrambleTextPlugin ya incluidos). Test setup (`.test/setup.js`) tiene polyfill de `window.matchMedia` para que ScrollTrigger registre bien en jsdom.
+- **Screenshots de proyectos:** viven en `frontend/public/projects/<slug>.png` (reemplazar los placeholders por capturas reales). En `data/proyectos.js` cada proyecto tiene `screenshot` (ruta local, usada en cards y detalle) e `imagen` (OG de GitHub, solo para metadata social). Si no existe `screenshot`, los componentes hacen fallback a `imagen`.
+- **Secciones Skills/Proyectos:** organismos recomponen datos con `AnimatedSectionUp` (stagger por item), `SpotlightCard` envuelve cada grupo/card (spotlight azul que sigue el cursor) y `GlareHover` envuelve los chips de skills. Títulos de sección con `SectionHeader scramble` activan `ScrambledText` (descramble al hover sobre el título).
 - **Estilo de código:** archivos `.jsx`/`.js`, sin comentarios salvo que se pidan, seguir estilo de los vecinos.
 - **Formulario de contacto:** `ContactForm` (client) → `POST /api/contact` → API de Resend vía fetch nativo. `RESEND_API_KEY` y `CONTACT_TO` viven solo en env vars de Vercel — nunca en el repo ni en el bundle. Honeypot (`empresa`) validado server-side; sin dominio verificado el remitente es `onboarding@resend.dev` (envía únicamente al destinatario propio).
 - **Widget flotante de entrevista-ia:** `ChatWidget` (client, montado en `layout.jsx`) abre la instancia privada del asistente RAG en un iframe lazy con `?embed=1`. FAB azul sólido (`bg-accent`, único elemento azul-relleno del sitio) con anillo `animate-ping` cuando está cerrado; burbuja teaser de primer contacto descartable (persistencia en `localStorage.chat_teaser_visto`). El nombre visible es simplemente "asistente". Las URLs viven en las constantes `CHAT_URL`/`CHAT_HOME` del componente. Repo privado: `gsiasp-hash/entrevista-ia`.

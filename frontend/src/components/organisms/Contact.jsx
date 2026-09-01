@@ -1,6 +1,7 @@
 import ContactCard from "../molecules/ContactCard";
 import ContactForm from "../molecules/ContactForm";
 import SectionHeader from "../atoms/SectionHeader";
+import SpotlightCard from "../rb/SpotlightCard";
 import { enlaces } from "../../data/contacto";
 
 export default function Contact() {
@@ -14,13 +15,14 @@ export default function Contact() {
       <ContactForm />
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
         {enlaces.map(({ label, value, href, copy }) => (
-          <ContactCard
-            key={label}
-            href={copy ? undefined : href}
-            copy={copy}
-            label={label}
-            value={value}
-          />
+          <SpotlightCard key={label} className="rounded-sm">
+            <ContactCard
+              href={copy ? undefined : href}
+              copy={copy}
+              label={label}
+              value={value}
+            />
+          </SpotlightCard>
         ))}
       </div>
     </section>

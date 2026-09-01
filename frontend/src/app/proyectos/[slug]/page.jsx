@@ -67,7 +67,7 @@ export default async function ProyectoPage({ params }) {
       <img
         className="w-full h-64 object-cover border border-hairline mt-6"
         alt={`Captura del proyecto ${proyecto.nombre}`}
-        src={proyecto.imagen}
+        src={proyecto.screenshot || proyecto.imagen}
       />
 
       <div className="mt-8 flex flex-col gap-4 border-t border-hairline pt-8">

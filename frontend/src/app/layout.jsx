@@ -51,10 +51,10 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#161414",
+  themeColor: "#fdfcfc",
 };
 
-const themeInitScript = `(function(){try{if(localStorage.getItem("theme")!=="light"){document.documentElement.classList.add("dark")}}catch(e){document.documentElement.classList.add("dark")}})();`;
+const themeInitScript = `(function(){try{if(localStorage.getItem("theme")==="dark"){document.documentElement.classList.add("dark")}}catch(e){}})();`;
 
 export default function RootLayout({ children }) {
   return (

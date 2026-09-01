@@ -5,7 +5,7 @@ import Skills from "../components/organisms/Skills";
 describe("Skills", () => {
   it("renders the section title", () => {
     render(<Skills />);
-    expect(screen.getByText("[+] Skills")).toBeInTheDocument();
+    expect(screen.getByLabelText("Skills")).toBeInTheDocument();
   });
 
   it("renders skill categories", () => {

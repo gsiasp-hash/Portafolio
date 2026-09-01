@@ -1,23 +1,30 @@
 import Link from "next/link";
 import Button from "../atoms/Button";
 import Chip from "../atoms/Chip";
+import SpotlightCard from "../rb/SpotlightCard";
 
 export default function ProjectCard({
   slug,
   nombre,
   descripcion,
   imagen,
+  screenshot,
   tecnologias,
   demoUrl,
   repoUrl,
 }) {
+  const imageSrc = screenshot || imagen;
+
   return (
-    <article className="group border border-hairline rounded-none overflow-hidden flex flex-col bg-surface-card/60 hover:border-accent transition-colors duration-300">
-      <Link href={`/proyectos/${slug}`} className="block">
+    <SpotlightCard className="group border border-hairline rounded-none overflow-hidden flex flex-col bg-surface-card/60 hover:border-accent transition-colors duration-300 h-full">
+      <Link
+        href={`/proyectos/${slug}`}
+        className="block overflow-hidden"
+      >
         <img
-          className="w-full h-44 object-cover"
+          className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
           alt={`Captura del proyecto ${nombre}`}
-          src={imagen}
+          src={imageSrc}
           loading="lazy"
         />
       </Link>
@@ -27,7 +34,7 @@ export default function ProjectCard({
             <span className="group-hover:hidden">[+]</span>
             <span className="hidden group-hover:inline">[→]</span>
           </span>
-          <h3 className="text-lg font-medium text-ink">
+          <h3 className="text-xl font-medium text-ink">
             <Link
               href={`/proyectos/${slug}`}
               className="hover:text-accent transition-colors"
@@ -57,10 +64,10 @@ export default function ProjectCard({
             target="_blank"
             rel="noreferrer"
           >
-            Código
+            Repositorio
           </Button>
         </div>
       </div>
-    </article>
+    </SpotlightCard>
   );
 }
