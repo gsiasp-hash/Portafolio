@@ -1,7 +1,14 @@
 import Button from "../atoms/Button";
 import NavLink from "../atoms/NavLink";
 
-export default function MobileMenu({ open, links, activeId, onClose }) {
+export default function MobileMenu({
+  open,
+  links,
+  lang = "es",
+  contactLabel = "Contacto",
+  activeId,
+  onClose,
+}) {
   return (
     <div
       className={`md:hidden overflow-hidden transition-all duration-300 border-hairline ${
@@ -20,8 +27,8 @@ export default function MobileMenu({ open, links, activeId, onClose }) {
             {link.label}
           </NavLink>
         ))}
-        <Button size="sm" href="#contacto" onClick={onClose} className="w-full">
-          Contacto
+        <Button size="sm" href={`/${lang}#contacto`} onClick={onClose} className="w-full">
+          {contactLabel}
         </Button>
       </div>
     </div>

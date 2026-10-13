@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import es from "../../i18n/es";
 
-export default function ScrollToTop() {
+export default function ScrollToTop({ label = es.scrollTop }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function ScrollToTop() {
           transition={{ duration: 0.2 }}
           onClick={scrollToTop}
           className="fixed bottom-16 right-4 sm:right-6 z-50 bg-ink text-canvas border border-hairline-strong w-10 h-10 rounded-sm flex items-center justify-center cursor-pointer hover:bg-ink-deep transition-colors"
-          aria-label="Volver arriba"
+          aria-label={label}
         >
           <span className="text-lg font-bold leading-none">↑</span>
         </motion.button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import es from "../../i18n/es";
 
 function subscribe(callback) {
   const observer = new MutationObserver(callback);
@@ -14,7 +15,7 @@ function subscribe(callback) {
 const getSnapshot = () => document.documentElement.classList.contains("dark");
 const getServerSnapshot = () => false;
 
-export default function ThemeToggle({ className = "" }) {
+export default function ThemeToggle({ className = "", t = es.theme }) {
   const dark = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggle = () => {
@@ -31,7 +32,7 @@ export default function ThemeToggle({ className = "" }) {
     <button
       type="button"
       onClick={toggle}
-      aria-label={dark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+      aria-label={dark ? t.toLight : t.toDark}
       className={`text-xs text-mute hover:text-accent transition-colors duration-200 cursor-pointer select-none ${className}`}
     >
       {dark ? "[light]" : "[dark]"}

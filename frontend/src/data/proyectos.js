@@ -1,3 +1,5 @@
+import { proyectosEn } from "./proyectos.en";
+
 export const proyectos = [
   {
     slug: "asistente-rag",
@@ -64,10 +66,16 @@ export const proyectos = [
   },
 ];
 
-export function getProyectos() {
-  return proyectos;
+function localizar(proyecto, lang) {
+  if (lang !== "en") return proyecto;
+  return { ...proyecto, ...proyectosEn[proyecto.slug] };
 }
 
-export function getProyectoPorSlug(slug) {
-  return proyectos.find((proyecto) => proyecto.slug === slug);
+export function getProyectos(lang = "es") {
+  return proyectos.map((proyecto) => localizar(proyecto, lang));
+}
+
+export function getProyectoPorSlug(slug, lang = "es") {
+  const proyecto = proyectos.find((p) => p.slug === slug);
+  return proyecto && localizar(proyecto, lang);
 }

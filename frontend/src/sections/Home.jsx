@@ -6,23 +6,23 @@ import Projects from "../components/organisms/Projects";
 import Contact from "../components/organisms/Contact";
 import ScrollToTop from "../components/organisms/ScrollToTop";
 
-export default function Home() {
+export default function Home({ lang, dict }) {
   return (
     <div className="min-h-screen flex flex-col font-mono">
-      <Hero />
+      <Hero t={dict.hero} />
       <AnimatedSection>
-        <About />
+        <About t={dict.about} />
       </AnimatedSection>
       <AnimatedSection>
-        <Skills />
+        <Skills t={dict.skills} />
       </AnimatedSection>
       <AnimatedSection>
-        <Projects />
+        <Projects lang={lang} t={dict.projects} />
       </AnimatedSection>
       <AnimatedSection>
-        <Contact />
+        <Contact t={dict.contact} />
       </AnimatedSection>
-      <ScrollToTop />
+      <ScrollToTop label={dict.scrollTop} />
     </div>
   );
 }

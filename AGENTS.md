@@ -33,7 +33,9 @@ Verificación obligatoria antes de dar una tarea por terminada: `npm run lint` +
 
 ```
 frontend/src/
-├── app/                   # App Router: layout.jsx (metadata OG, Analytics) + page.jsx
+├── app/                   # App Router: [lang]/layout.jsx (metadata OG, Analytics), [lang]/page.jsx, [lang]/proyectos/[slug]
+├── i18n/                  # config.js (locales es/en), es.js, en.js, dictionaries.js (getDictionary)
+├── proxy.js               # redirige rutas sin idioma a /es o /en (cookie NEXT_LOCALE o Accept-Language)
 ├── components/            # Arquitectura Atomic Design
 │   ├── atoms/           # Button, Chip, SectionHeader, NavLink
 │   ├── molecules/       # ProjectCard, SkillGroup, InfoCard, ContactCard, MobileMenu
@@ -54,6 +56,8 @@ frontend/src/
 - NO crear carpeta `pages/`: Next la interpretaría como Pages Router (ruta fantasma). Las vistas viven en `sections/`.
 
 ## Convenciones
+
+- **i18n (es/en):** rutas `/es` y `/en` (`app/[lang]`). Todo texto visible vive en `src/i18n/es.js` y `en.js` (mismas claves; lo valida `test/i18n.test.jsx`). Los componentes reciben su porción del diccionario por prop `t` (default español); los textos de proyectos en inglés están en `data/proyectos.en.js`. Selector `LanguageToggle` en Navbar. `generateMetadata` emite canonical + hreflang; sitemap incluye ambos idiomas.
 
 - **Diseño:** seguir `frontend/DESIGN.md` y los tokens de `README.md` (`canvas`, `ink`, `body`, `accent`, etc.).
 - **Color:** solo azul `#007aff` como acento vivo. Sin sombras, sin degradados.

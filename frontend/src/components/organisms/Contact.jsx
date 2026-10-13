@@ -3,16 +3,17 @@ import ContactForm from "../molecules/ContactForm";
 import SectionHeader from "../atoms/SectionHeader";
 import SpotlightCard from "../rb/SpotlightCard";
 import { enlaces } from "../../data/contacto";
+import es from "../../i18n/es";
 
-export default function Contact() {
+export default function Contact({ t = es.contact }) {
   return (
-    <section id="contacto" className="text-ink py-16 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto">
-      <SectionHeader title="Contacto" />
-      <p className="text-sm text-body leading-relaxed max-w-3xl mb-8">
-        ¿Tienes un proyecto en mente o una oportunidad? Déjame un mensaje y te
-        respondo a la brevedad.
-      </p>
-      <ContactForm />
+    <section
+      id="contacto"
+      className="text-ink py-16 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto"
+    >
+      <SectionHeader title={t.title} />
+      <p className="text-sm text-body leading-relaxed max-w-3xl mb-8">{t.intro}</p>
+      <ContactForm t={t.form} />
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
         {enlaces.map(({ label, value, href, copy }) => (
           <SpotlightCard key={label} className="rounded-sm">
@@ -21,6 +22,7 @@ export default function Contact() {
               copy={copy}
               label={label}
               value={value}
+              t={t}
             />
           </SpotlightCard>
         ))}
