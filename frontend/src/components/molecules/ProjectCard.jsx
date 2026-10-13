@@ -3,7 +3,11 @@ import Button from "../atoms/Button";
 import Chip from "../atoms/Chip";
 import SpotlightCard from "../rb/SpotlightCard";
 
+import es from "../../i18n/es";
+
 export default function ProjectCard({
+  lang = "es",
+  t = es.projects,
   slug,
   nombre,
   descripcion,
@@ -17,13 +21,10 @@ export default function ProjectCard({
 
   return (
     <SpotlightCard className="group border border-hairline rounded-none overflow-hidden flex flex-col bg-surface-card/60 hover:border-accent transition-colors duration-300 h-full">
-      <Link
-        href={`/proyectos/${slug}`}
-        className="block overflow-hidden"
-      >
+      <Link href={`/${lang}/proyectos/${slug}`} className="block overflow-hidden">
         <img
           className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-          alt={`Captura del proyecto ${nombre}`}
+          alt={`${t.screenshotAlt} ${nombre}`}
           src={imageSrc}
           loading="lazy"
         />
@@ -36,7 +37,7 @@ export default function ProjectCard({
           </span>
           <h3 className="text-xl font-medium text-ink">
             <Link
-              href={`/proyectos/${slug}`}
+              href={`/${lang}/proyectos/${slug}`}
               className="hover:text-accent transition-colors"
             >
               {nombre}
@@ -54,7 +55,7 @@ export default function ProjectCard({
         <div className="flex gap-3 pt-2 border-t border-hairline">
           {demoUrl && (
             <Button size="sm" href={demoUrl} target="_blank" rel="noreferrer">
-              Ver demo
+              {t.viewDemo}
             </Button>
           )}
           <Button
@@ -64,7 +65,7 @@ export default function ProjectCard({
             target="_blank"
             rel="noreferrer"
           >
-            Repositorio
+            {t.repository}
           </Button>
         </div>
       </div>

@@ -3,10 +3,11 @@
 import { useState } from "react";
 import Button from "../atoms/Button";
 import { EMAIL } from "../../data/contacto";
+import es from "../../i18n/es";
 
 const initialStatus = "idle";
 
-export default function ContactForm() {
+export default function ContactForm({ t = es.contact.form }) {
   const [status, setStatus] = useState(initialStatus);
 
   const resetStatus = () => {
@@ -49,7 +50,7 @@ export default function ContactForm() {
     <form onSubmit={onSubmit} className="flex flex-col gap-4 max-w-xl">
       <div>
         <label htmlFor="nombre" className="block text-xs text-mute mb-1">
-          [nombre]
+          {t.name}
         </label>
         <input
           id="nombre"
@@ -59,7 +60,7 @@ export default function ContactForm() {
           minLength={2}
           maxLength={80}
           autoComplete="name"
-          placeholder="tu nombre"
+          placeholder={t.namePlaceholder}
           onChange={resetStatus}
           className={fieldClass}
         />
@@ -67,7 +68,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-xs text-mute mb-1">
-          [email]
+          {t.email}
         </label>
         <input
           id="email"
@@ -76,7 +77,7 @@ export default function ContactForm() {
           required
           maxLength={120}
           autoComplete="email"
-          placeholder="tu@email.com"
+          placeholder={t.emailPlaceholder}
           onChange={resetStatus}
           className={fieldClass}
         />
@@ -84,7 +85,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="mensaje" className="block text-xs text-mute mb-1">
-          [mensaje]
+          {t.message}
         </label>
         <textarea
           id="mensaje"
@@ -93,7 +94,7 @@ export default function ContactForm() {
           minLength={10}
           maxLength={2000}
           rows={5}
-          placeholder="hola guillermo, ..."
+          placeholder={t.messagePlaceholder}
           onChange={resetStatus}
           className={`${fieldClass} resize-y`}
         />
@@ -101,28 +102,21 @@ export default function ContactForm() {
 
       <div hidden aria-hidden="true">
         <label htmlFor="empresa">empresa</label>
-        <input
-          id="empresa"
-          name="empresa"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-        />
+        <input id="empresa" name="empresa" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
       <div className="flex items-center gap-4 flex-wrap">
         <Button type="submit" disabled={status === "sending"}>
-          {status === "sending" ? "[enviando...]" : "Enviar mensaje"}
+          {status === "sending" ? t.sending : t.send}
         </Button>
         {status === "ok" && (
           <p role="status" className="text-xs text-accent">
-            [ok] mensaje enviado. te respondo a la brevedad.
+            {t.ok}
           </p>
         )}
         {status === "error" && (
           <p role="alert" className="text-xs text-body">
-            [error] no fue posible enviarlo. escríbeme a{" "}
-            <span className="text-accent">{EMAIL}</span>
+            {t.errorPrefix} <span className="text-accent">{EMAIL}</span>
           </p>
         )}
       </div>

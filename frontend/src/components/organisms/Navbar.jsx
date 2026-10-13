@@ -5,16 +5,18 @@ import Button from "../atoms/Button";
 import NavLink from "../atoms/NavLink";
 import MobileMenu from "../molecules/MobileMenu";
 import ThemeToggle from "../atoms/ThemeToggle";
+import LanguageToggle from "../atoms/LanguageToggle";
+import es from "../../i18n/es";
 
 const sectionIds = ["sobre-mi", "skills", "proyectos", "contacto"];
 
-const links = [
-  { label: "Sobre mi", href: "#sobre-mi", id: "sobre-mi" },
-  { label: "Skills", href: "#skills", id: "skills" },
-  { label: "Proyectos", href: "#proyectos", id: "proyectos" },
-];
+export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme }) {
+  const links = [
+    { label: t.about, href: `/${lang}#sobre-mi`, id: "sobre-mi" },
+    { label: t.skills, href: `/${lang}#skills`, id: "skills" },
+    { label: t.projects, href: `/${lang}#proyectos`, id: "proyectos" },
+  ];
 
-export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
 
@@ -53,20 +55,22 @@ export default function Navbar() {
           ))}
           <Button
             size="sm"
-            href="#contacto"
+            href={`/${lang}#contacto`}
             className={active === "contacto" ? "font-medium" : ""}
           >
-            Contacto
+            {t.contact}
           </Button>
-          <ThemeToggle />
+          <LanguageToggle lang={lang} t={t} />
+          <ThemeToggle t={themeT} />
         </div>
 
         <div className="md:hidden flex items-center gap-4">
-          <ThemeToggle />
+          <LanguageToggle lang={lang} t={t} />
+          <ThemeToggle t={themeT} />
           <button
             className="flex flex-col gap-1.5 p-1 cursor-pointer"
             onClick={() => setOpen(!open)}
-            aria-label="Abrir menú"
+            aria-label={t.openMenu}
             aria-expanded={open}
           >
             <span
@@ -91,6 +95,8 @@ export default function Navbar() {
       <MobileMenu
         open={open}
         links={links}
+        lang={lang}
+        contactLabel={t.contact}
         activeId={active}
         onClose={() => setOpen(false)}
       />

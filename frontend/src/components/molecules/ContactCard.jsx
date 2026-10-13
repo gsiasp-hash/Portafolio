@@ -1,8 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import es from "../../i18n/es";
 
-export default function ContactCard({ href, copy = false, label, value }) {
+export default function ContactCard({
+  href,
+  copy = false,
+  label,
+  value,
+  t = es.contact,
+}) {
   const [copiado, setCopiado] = useState(false);
   const timer = useRef(null);
 
@@ -18,7 +25,7 @@ export default function ContactCard({ href, copy = false, label, value }) {
       </span>
       {copy ? (
         <span className="text-xs text-accent shrink-0" role="status">
-          {copiado ? "[copiado]" : "[copiar]"}
+          {copiado ? t.copied : t.copy}
         </span>
       ) : (
         <span className="text-accent shrink-0">↗</span>
@@ -54,7 +61,7 @@ export default function ContactCard({ href, copy = false, label, value }) {
     <button
       type="button"
       onClick={copiar}
-      aria-label={`Copiar ${label}`}
+      aria-label={`${t.copyLabel} ${label}`}
       className={`${base} w-full cursor-pointer`}
     >
       {inner}
