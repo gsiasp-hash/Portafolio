@@ -12,7 +12,7 @@ export const proyectos = [
     ],
     imagen: "https://opengraph.githubassets.com/1/gsiasp-hash/Asistente-clientes-RAG",
     tecnologias: ["TypeScript", "Next.js", "React", "Supabase", "Groq"],
-    demoUrl: "https://asistente-rag-plum.vercel.app",
+    demoUrl: "https://asistenterag.guillermosias.dev",
     repoUrl: "https://github.com/gsiasp-hash/Asistente-clientes-RAG",
   },
   {
