@@ -29,7 +29,7 @@ export const proyectos = [
     imagen: "https://opengraph.githubassets.com/1/gsiasp-hash/pizzeria",
     screenshot: "/projects/pizzeria.png",
     tecnologias: ["React", "Node.js", "Express", "Tailwind CSS", "JWT"],
-    demoUrl: "https://pizzeria-blush-kappa.vercel.app/",
+    demoUrl: "https://pizzeria.guillermosias.dev",
     repoUrl: "https://github.com/gsiasp-hash/pizzeria",
   },
   {
