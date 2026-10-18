@@ -6,9 +6,8 @@ import ChatWidget from "../../components/organisms/ChatWidget";
 import { notFound } from "next/navigation";
 import { getDictionary } from "../../i18n/dictionaries";
 import { hasLocale, locales } from "../../i18n/config";
+import { SITE_URL } from "../../data/site";
 import "../../css/style.css";
-
-const SITE_URL = "https://portfolio-cydert.vercel.app";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
