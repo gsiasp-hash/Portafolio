@@ -76,7 +76,7 @@ frontend/src/
 
 - **Nunca** incluir tokens, claves, contraseñas, `.env`, ni archivos `*.local` en código, commits ni documentación.
 - Antes de cada commit: revisar `git status` y `git diff`, y confirmar que no se stagean secretos.
-- El único dato personal publicado de forma intencional es el email de contacto `g.siasp@gmail.com` (aparece en `Contacto.jsx`, `Footer.jsx` y el placeholder del form). No reutilizarlo para otros usos.
+- El único dato personal publicado de forma intencional es el email de contacto `contacto@guillermosias.dev` (reenvía a Gmail vía Cloudflare Email Routing; aparece en `Contacto.jsx`, `Footer.jsx` y el placeholder del form). No reutilizarlo para otros usos.
 - No exponer datos del autor distintos de los que ya están en el sitio (bio, redes públicas en `Contacto.jsx`).
 - Si aparece un secreto, no committearlo: reportar y rotarlo.
 

@@ -58,7 +58,7 @@ describe("POST /api/contact", () => {
     expect(init.headers.Authorization).toBe("Bearer test-key");
     const payload = JSON.parse(init.body);
     expect(payload.reply_to).toBe("ana@test.com");
-    expect(payload.to).toContain("g.siasp@gmail.com");
+    expect(payload.to).toContain("contacto@guillermosias.dev");
     expect(payload.subject).toContain("Ana");
   });
 

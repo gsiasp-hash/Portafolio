@@ -1,4 +1,4 @@
-export const EMAIL = "g.siasp@gmail.com";
+export const EMAIL = "contacto@guillermosias.dev";
 
 export const enlaces = [
   { label: "Email", value: EMAIL, href: `mailto:${EMAIL}`, copy: true },
