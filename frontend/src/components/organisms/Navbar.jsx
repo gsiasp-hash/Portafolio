@@ -41,7 +41,7 @@ export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme }) {
   }, []);
 
   return (
-    <nav className="border-b border-hairline">
+    <nav className="sticky top-0 z-40 border-b border-hairline bg-canvas">
       <div className="max-w-6xl mx-auto flex justify-between items-center h-14 px-6">
         <div className="text-xs leading-none select-none">
           [ <span className="text-accent">GS</span> ]
