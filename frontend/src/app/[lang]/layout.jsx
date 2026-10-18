@@ -85,7 +85,7 @@ export default async function RootLayout({ children, params }) {
                   name: "Guillermo Sias",
                   jobTitle: "Full Stack Developer",
                   url: SITE_URL,
-                  email: "g.siasp@gmail.com",
+                  email: "contacto@guillermosias.dev",
                   sameAs: [
                     "https://linkedin.com/in/guillermo-sias-762775180",
                     "https://github.com/gsiasp-hash",
