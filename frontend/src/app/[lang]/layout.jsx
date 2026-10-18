@@ -52,7 +52,6 @@ export async function generateMetadata({ params }) {
     },
     icons: {
       icon: "/favicon.ico",
-      apple: "/apple-touch-icon.png",
     },
   };
 }
