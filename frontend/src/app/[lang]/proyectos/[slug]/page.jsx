@@ -6,6 +6,7 @@ import RouteFade from "../../../../components/templates/RouteFade";
 import { proyectos, getProyectoPorSlug } from "../../../../data/proyectos";
 import { getDictionary } from "../../../../i18n/dictionaries";
 import { hasLocale, locales } from "../../../../i18n/config";
+import { SITE_URL } from "../../../../data/site";
 
 export function generateStaticParams() {
   return locales.flatMap((lang) => proyectos.map(({ slug }) => ({ lang, slug })));
@@ -35,10 +36,10 @@ export async function generateMetadata({ params }) {
       images: [proyecto.imagen],
     },
     alternates: {
-      canonical: `https://portfolio-cydert.vercel.app/${lang}/proyectos/${slug}`,
+      canonical: `${SITE_URL}/${lang}/proyectos/${slug}`,
       languages: {
-        es: `https://portfolio-cydert.vercel.app/es/proyectos/${slug}`,
-        en: `https://portfolio-cydert.vercel.app/en/proyectos/${slug}`,
+        es: `${SITE_URL}/es/proyectos/${slug}`,
+        en: `${SITE_URL}/en/proyectos/${slug}`,
       },
     },
   };

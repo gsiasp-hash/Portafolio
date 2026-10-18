@@ -1,7 +1,6 @@
 import { proyectos } from "../data/proyectos";
 import { locales } from "../i18n/config";
-
-const BASE_URL = "https://portfolio-cydert.vercel.app";
+import { SITE_URL as BASE_URL } from "../data/site";
 
 const alternates = (path) => ({
   languages: Object.fromEntries(
