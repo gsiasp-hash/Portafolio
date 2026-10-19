@@ -47,7 +47,7 @@ export async function POST(request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Portfolio <onboarding@resend.dev>",
+        from: "Portfolio <contacto@guillermosias.dev>",
         to: [process.env.CONTACT_TO || EMAIL],
         reply_to: body.email,
         subject: `[portfolio] mensaje de ${body.nombre}`,
@@ -56,10 +56,12 @@ export async function POST(request) {
     });
 
     if (!res.ok) {
+      console.error("Resend respondió error:", res.status, await res.text());
       return NextResponse.json({ ok: false }, { status: 502 });
     }
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("Fallo al llamar a Resend:", error);
     return NextResponse.json({ ok: false }, { status: 502 });
   }
 }
