@@ -58,15 +58,17 @@ export default function ProjectCard({
               {t.viewDemo}
             </Button>
           )}
-          <Button
-            size="sm"
-            variant="secondary"
-            href={repoUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {t.repository}
-          </Button>
+          {repoUrl && (
+            <Button
+              size="sm"
+              variant="secondary"
+              href={repoUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.repository}
+            </Button>
+          )}
         </div>
       </div>
     </SpotlightCard>

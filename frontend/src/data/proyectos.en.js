@@ -1,4 +1,24 @@
 export const proyectosEn = {
+  "promusic-chat": {
+    descripcion:
+      "Commercial AI chatbot embedded in Promusic's Shopify store: answers catalog, service and store questions in real time, handles cart and shipment tracking, and hands off to sales when needed.",
+    resumen: [
+      "Sales and support chatbot for Promusic's Shopify store (promusic.cl), live in production and handling real customers. Built on Shopify's official chat agent template and extended with custom logic: it answers catalog questions (usage, specs, compatibility and accessories), info about the brand's spaces and Academy courses, hours, shipping, payment methods and warranties, all read live from the real store instead of static content.",
+      "It can add products to the cart from the conversation, offers cross-sell based on Shopify's real product recommendations, reports shipment status, and understands Chilean pro-audio industry jargon. When a question calls for tailored advice or a custom quote, it automatically hands off to the sales team instead of improvising a recommendation.",
+      "The bot's behavior follows explicit rules: it never gives in-depth advice, never exposes sensitive company information, stays within the store topic, and never invents prices, stock or lead times — if it doesn't have the data, it says so and offers the human channel. Access to sensitive tools (cart, checkout, customer data) is blocked at the code level, not just through model instructions, and the project went through a full security audit (session tokens, XSS, rate-limiting, webhook verification).",
+      "Stack: a Shopify app (React Router) with Claude as the LLM, Prisma and PostgreSQL for sessions, live reads of the catalog and store pages via the Storefront/Admin API, and deployment on a self-managed VPS running Coolify.",
+    ],
+  },
+  "studio-fest": {
+    descripcion:
+      "Pre-registration, staff check-in and public info app for Studio Fest, Promusic's event with 4 spaces running at the same time.",
+    resumen: [
+      "Custom app for Studio Fest, Promusic's event with 4 spaces running in parallel (Estudio, Live Stage, Showroom and Patio) across shared time blocks. Replaces a PowerApps-based solution: attendees pre-register once, choosing an activity per block, and each space's staff reviews and manages its own list of registrants from a dedicated PIN-protected panel.",
+      "The staff panel supports real-time check-in, adding walk-ins with no prior reservation, searching by name, and viewing overall event stats. The public side shows the program, exhibitors, location and a \"live now\" view of what's happening in each space at any given moment, plus a lookup so each attendee can find their own schedule by email.",
+      "Registration data lives in Microsoft Lists (SharePoint) and is exposed to the app through a Power Automate flow acting as an HTTP API, avoiding an Azure/Entra app registration and the permission overhead that would require. An in-memory snapshot, refreshed in the background, keeps the app fast even when that external API responds slowly.",
+      "Stack: Next.js 16 (App Router) and TypeScript, Tailwind CSS v4, Power Automate as the data backend, deployed via Docker on a self-managed VPS running Coolify.",
+    ],
+  },
   "asistente-rag": {
     descripcion:
       "RAG-based customer support assistant: indexes knowledge PDFs and answers in a chat with streaming, conversational memory and vector search on pgvector.",

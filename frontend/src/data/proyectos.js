@@ -2,6 +2,38 @@ import { proyectosEn } from "./proyectos.en";
 
 export const proyectos = [
   {
+    slug: "promusic-chat",
+    nombre: "Chatbot IA Promusic",
+    descripcion:
+      "Chatbot comercial con IA integrado en la tienda Shopify de Promusic: responde consultas de catálogo, servicios y tienda en tiempo real, gestiona carrito y seguimiento de envío, y deriva a ventas cuando corresponde.",
+    resumen: [
+      "Chatbot de atención e impulso de ventas para la tienda Shopify de Promusic (promusic.cl), en producción real atendiendo clientes. Construido sobre el template oficial de Shopify para agentes de chat y extendido con lógica propia: responde preguntas de catálogo (uso, especificaciones, compatibilidad y accesorios), información de espacios y cursos de la Academia, horario, envíos, métodos de pago y garantías, todo leído en vivo desde la tienda real en vez de contenido estático.",
+      "Permite agregar productos al carrito desde la conversación, ofrece venta cruzada basada en las recomendaciones reales de Shopify para cada producto, informa el estado de envío y entiende la jerga técnica de la industria del audio en Chile. Cuando la consulta requiere asesoría a medida o una cotización personalizada, deriva automáticamente al equipo comercial en vez de improvisar una recomendación.",
+      "El comportamiento del bot sigue reglas explícitas: no asesora en profundidad, nunca expone información sensible de la empresa, se mantiene dentro del tópico tienda y nunca inventa precios, stock o plazos — si no tiene el dato, lo dice y ofrece el canal humano. El acceso a herramientas sensibles (carrito, checkout, datos de cliente) está bloqueado a nivel de código, no solo de instrucciones al modelo, y el proyecto pasó por una auditoría de seguridad completa (tokens de sesión, XSS, rate-limiting, verificación de webhooks).",
+      "Stack: app de Shopify (React Router) con Claude como LLM, Prisma y PostgreSQL para sesiones, lectura en vivo del catálogo y páginas de la tienda vía Storefront/Admin API, y despliegue en un VPS propio gestionado con Coolify.",
+    ],
+    imagen: "/projects/promusic-chat.png",
+    screenshot: "/projects/promusic-chat.png",
+    tecnologias: ["Shopify", "Claude", "React Router", "Prisma", "PostgreSQL"],
+    demoUrl: "https://www.promusic.cl",
+  },
+  {
+    slug: "studio-fest",
+    nombre: "Studio Fest — App de Registro",
+    descripcion:
+      "App de pre-inscripción, check-in de staff y vista pública para Studio Fest, el evento de Promusic con 4 espacios funcionando en simultáneo.",
+    resumen: [
+      "Aplicación a medida para Studio Fest, el evento de Promusic con 4 espacios funcionando en paralelo (Estudio, Live Stage, Showroom y Patio) repartidos en bloques horarios compartidos. Reemplaza una solución basada en PowerApps: los asistentes se preinscriben una sola vez eligiendo actividad por bloque, y el staff de cada espacio revisa y gestiona su lista de inscritos desde un panel propio protegido por PIN.",
+      "El panel de staff permite marcar asistencia en tiempo real, agregar gente que llega sin reserva previa, buscar por nombre y ver estadísticas generales del evento. La parte pública muestra programa, expositores, ubicación y una vista \"en vivo\" de qué actividad está ocurriendo en cada espacio en cada momento, además de que cada asistente puede consultar su propia agenda por email.",
+      "Los datos de inscripción viven en Microsoft Lists (SharePoint) y se exponen a la app a través de un flow de Power Automate que actúa como API HTTP, evitando registrar una app en Azure/Entra y la gestión de permisos que eso implicaría. Un snapshot en memoria, actualizado en segundo plano, mantiene la app rápida incluso cuando esa API externa responde lento.",
+      "Stack: Next.js 16 (App Router) y TypeScript, Tailwind CSS v4, Power Automate como backend de datos, desplegado vía Docker en un VPS propio con Coolify.",
+    ],
+    imagen: "/projects/studio-fest.png",
+    screenshot: "/projects/studio-fest.png",
+    tecnologias: ["Next.js", "TypeScript", "Tailwind CSS", "Power Automate"],
+    demoUrl: "https://studiofest.promusic.cl",
+  },
+  {
     slug: "asistente-rag",
     nombre: "Asistente RAG",
     descripcion:

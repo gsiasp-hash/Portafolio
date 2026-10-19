@@ -95,14 +95,16 @@ export default async function ProyectoPage({ params }) {
               {t.viewDemo}
             </Button>
           )}
-          <Button
-            variant="secondary"
-            href={proyecto.repoUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {t.code}
-          </Button>
+          {proyecto.repoUrl && (
+            <Button
+              variant="secondary"
+              href={proyecto.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.code}
+            </Button>
+          )}
         </div>
       </section>
     </RouteFade>

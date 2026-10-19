@@ -16,8 +16,10 @@ describe("capa de datos de proyectos", () => {
       expect(proyecto.nombre).toBeTruthy();
       expect(proyecto.descripcion).toBeTruthy();
       expect(proyecto.resumen.length).toBeGreaterThanOrEqual(1);
-      expect(proyecto.imagen).toMatch(/^https?:\/\//);
-      expect(proyecto.repoUrl).toMatch(/^https?:\/\//);
+      expect(proyecto.imagen).toMatch(/^(https?:\/\/|\/)/);
+      if (proyecto.repoUrl) {
+        expect(proyecto.repoUrl).toMatch(/^https?:\/\//);
+      }
     }
   });
 
