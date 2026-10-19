@@ -9,11 +9,11 @@ export const skills = [
   },
   {
     id: "backend",
-    skills: ["Node.js", "Express", "REST APIs", "JWT", "PostgreSQL", "Supabase"],
+    skills: ["Node.js", "Express", "REST APIs", "JWT", "PostgreSQL", "Supabase", "Prisma"],
   },
   {
     id: "ia",
-    skills: ["RAG", "Embeddings", "Gemini", "Groq", "opencode"],
+    skills: ["RAG", "Embeddings", "Claude", "Gemini", "Groq", "opencode"],
   },
   {
     id: "especialidades",
@@ -25,6 +25,6 @@ export const skills = [
   },
   {
     id: "plataformas",
-    skills: ["Shopify", "WordPress (Elementor)", "Vercel"],
+    skills: ["Shopify", "WordPress (Elementor)", "Vercel", "Power Automate"],
   },
 ];
