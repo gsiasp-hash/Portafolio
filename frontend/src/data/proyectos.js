@@ -2,6 +2,22 @@ import { proyectosEn } from "./proyectos.en";
 
 export const proyectos = [
   {
+    slug: "promusic-academia",
+    nombre: "Promusic Academia",
+    descripcion:
+      "Landing page de la academia de Promusic construida a medida dentro de su tienda Shopify: cursos vigentes, campus, capacitación corporativa y preguntas frecuentes. Demuestra el manejo de Shopify más allá del catálogo.",
+    resumen: [
+      "Landing page de Promusic Academia, el organismo de capacitación técnica de Promusic en audio en vivo, iluminación, producción musical e industria del entretenimiento. Vive dentro de la tienda Shopify de la marca (promusic.cl) y está pensada para que cualquier visitante entienda qué se dicta, cuándo y cómo inscribirse.",
+      "Es una muestra del manejo de Shopify más allá del catálogo de productos: una página totalmente a medida integrada al tema de la tienda, que conserva la navegación, el carrito y el estilo de la marca mientras presenta contenido editorial y de servicios, sin apps externas ni un sitio aparte.",
+      "La página reúne en un solo recorrido los cursos y sesiones vigentes con fecha, precio, cupos e instructor, una presentación del campus en Ñuñoa, los programas de capacitación corporativa a medida, el historial de cursos anteriores, la historia y valores de la academia, y una sección de preguntas frecuentes colapsables.",
+      "Cada curso se presenta en una tarjeta expandible con su detalle y llamadas a la acción claras: inscripción, programa en PDF o compra de entrada para sesiones en vivo. El diseño es responsive y se integra con la navegación y el estilo del resto de la tienda.",
+    ],
+    imagen: "/projects/promusic-academia.png",
+    screenshot: "/projects/promusic-academia.png",
+    tecnologias: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
+    demoUrl: "https://promusic.cl/pages/academia",
+  },
+  {
     slug: "promusic-chat",
     nombre: "Chatbot IA Promusic",
     descripcion:
@@ -24,7 +40,7 @@ export const proyectos = [
       "App de pre-inscripción, check-in de staff y vista pública para Studio Fest, el evento de Promusic con 4 espacios funcionando en simultáneo.",
     resumen: [
       "Aplicación a medida para Studio Fest, el evento de Promusic con 4 espacios funcionando en paralelo (Estudio, Live Stage, Showroom y Patio) repartidos en bloques horarios compartidos. Reemplaza una solución basada en PowerApps: los asistentes se preinscriben una sola vez eligiendo actividad por bloque, y el staff de cada espacio revisa y gestiona su lista de inscritos desde un panel propio protegido por PIN.",
-      "El panel de staff permite marcar asistencia en tiempo real, agregar gente que llega sin reserva previa, buscar por nombre y ver estadísticas generales del evento. La parte pública muestra programa, expositores, ubicación y una vista \"en vivo\" de qué actividad está ocurriendo en cada espacio en cada momento, además de que cada asistente puede consultar su propia agenda por email.",
+      'El panel de staff permite marcar asistencia en tiempo real, agregar gente que llega sin reserva previa, buscar por nombre y ver estadísticas generales del evento. La parte pública muestra programa, expositores, ubicación y una vista "en vivo" de qué actividad está ocurriendo en cada espacio en cada momento, además de que cada asistente puede consultar su propia agenda por email.',
       "Los datos de inscripción viven en Microsoft Lists (SharePoint) y se exponen a la app a través de un flow de Power Automate que actúa como API HTTP, evitando registrar una app en Azure/Entra y la gestión de permisos que eso implicaría. Un snapshot en memoria, actualizado en segundo plano, mantiene la app rápida incluso cuando esa API externa responde lento.",
       "Stack: Next.js 16 (App Router) y TypeScript, Tailwind CSS v4, Power Automate como backend de datos, desplegado vía Docker en un VPS propio con Coolify.",
     ],
