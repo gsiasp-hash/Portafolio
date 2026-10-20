@@ -1,4 +1,14 @@
 export const proyectosEn = {
+  "promusic-academia": {
+    descripcion:
+      "Landing page for Promusic's academy, custom-built inside its Shopify store: current courses, campus, corporate training and FAQ. It showcases Shopify skills beyond the product catalog.",
+    resumen: [
+      "Landing page for Promusic Academia, Promusic's technical training body for live audio, lighting, music production and the entertainment industry. It lives inside the brand's Shopify store (promusic.cl) and is designed so any visitor understands what is taught, when, and how to enroll.",
+      "It showcases Shopify skills beyond the product catalog: a fully custom page integrated into the store theme that keeps the brand's navigation, cart and style while presenting editorial and service content, with no external apps or separate site.",
+      "The page brings together in a single flow the current courses and sessions with date, price, seats and instructor, a presentation of the Ñuñoa campus, custom corporate training programs, the history of past courses, the academy's story and values, and a collapsible FAQ section.",
+      "Each course is shown in an expandable card with its details and clear calls to action: enrollment, PDF syllabus or ticket purchase for live sessions. The design is responsive and blends with the navigation and style of the rest of the store.",
+    ],
+  },
   "promusic-chat": {
     descripcion:
       "Commercial AI chatbot embedded in Promusic's Shopify store: answers catalog, service and store questions in real time, handles cart and shipment tracking, and hands off to sales when needed.",
@@ -14,7 +24,7 @@ export const proyectosEn = {
       "Pre-registration, staff check-in and public info app for Studio Fest, Promusic's event with 4 spaces running at the same time.",
     resumen: [
       "Custom app for Studio Fest, Promusic's event with 4 spaces running in parallel (Estudio, Live Stage, Showroom and Patio) across shared time blocks. Replaces a PowerApps-based solution: attendees pre-register once, choosing an activity per block, and each space's staff reviews and manages its own list of registrants from a dedicated PIN-protected panel.",
-      "The staff panel supports real-time check-in, adding walk-ins with no prior reservation, searching by name, and viewing overall event stats. The public side shows the program, exhibitors, location and a \"live now\" view of what's happening in each space at any given moment, plus a lookup so each attendee can find their own schedule by email.",
+      'The staff panel supports real-time check-in, adding walk-ins with no prior reservation, searching by name, and viewing overall event stats. The public side shows the program, exhibitors, location and a "live now" view of what\'s happening in each space at any given moment, plus a lookup so each attendee can find their own schedule by email.',
       "Registration data lives in Microsoft Lists (SharePoint) and is exposed to the app through a Power Automate flow acting as an HTTP API, avoiding an Azure/Entra app registration and the permission overhead that would require. An in-memory snapshot, refreshed in the background, keeps the app fast even when that external API responds slowly.",
       "Stack: Next.js 16 (App Router) and TypeScript, Tailwind CSS v4, Power Automate as the data backend, deployed via Docker on a self-managed VPS running Coolify.",
     ],
