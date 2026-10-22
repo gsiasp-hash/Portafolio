@@ -1,11 +1,15 @@
 import SectionHeader from "../atoms/SectionHeader";
-import ProjectCard from "../molecules/ProjectCard";
+import ProjectsGrid from "../molecules/ProjectsGrid";
 import { AnimatedSectionUp } from "../templates/AnimatedSection";
 import { getProyectos } from "../../data/proyectos";
+import { getGaleria } from "../../data/galeria";
 import es from "../../i18n/es";
 
 export default function Projects({ lang = "es", t = es.projects }) {
-  const proyectos = getProyectos(lang);
+  const items = getProyectos(lang).map((proyecto) => ({
+    ...proyecto,
+    images: getGaleria(proyecto.slug, lang),
+  }));
   return (
     <section
       id="proyectos"
@@ -14,10 +18,8 @@ export default function Projects({ lang = "es", t = es.projects }) {
       <AnimatedSectionUp>
         <SectionHeader title={t.title} scramble />
       </AnimatedSectionUp>
-      <AnimatedSectionUp className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {proyectos.map((proyecto) => (
-          <ProjectCard key={proyecto.nombre} lang={lang} t={t} {...proyecto} />
-        ))}
+      <AnimatedSectionUp>
+        <ProjectsGrid lang={lang} t={t} items={items} />
       </AnimatedSectionUp>
     </section>
   );
