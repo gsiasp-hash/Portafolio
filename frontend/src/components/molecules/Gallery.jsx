@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import Lightbox from "./Lightbox";
 
 import es from "../../i18n/es";
+import Image from "next/image";
 
 const SWIPE = 60;
 
@@ -77,9 +78,12 @@ export default function Gallery({ images, t = es.projects }) {
                 }}
                 className="block w-full h-full cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-accent"
               >
-                <img
+                <Image
                   src={img.src}
                   alt={img.alt}
+                  width={1568}
+                  height={736}
+                  sizes="(min-width: 1024px) 960px, 100vw"
                   loading={i === 0 ? "eager" : "lazy"}
                   draggable={false}
                   className="w-full h-full object-cover object-top select-none"
@@ -143,9 +147,12 @@ export default function Gallery({ images, t = es.projects }) {
                   : "border-hairline opacity-60 hover:opacity-100"
               }`}
             >
-              <img
+              <Image
                 src={img.src}
                 alt=""
+                width={1568}
+                height={736}
+                sizes="240px"
                 loading="lazy"
                 className="w-full h-full object-cover object-top"
               />

@@ -5,6 +5,9 @@ import { createPortal } from "react-dom";
 import { motion, useReducedMotion } from "framer-motion";
 
 import es from "../../i18n/es";
+import Image from "next/image";
+
+const MotionImage = motion.create(Image);
 
 const FOCUSABLE = "button, [href], [tabindex]:not([tabindex='-1'])";
 
@@ -95,14 +98,18 @@ export default function Lightbox({
             &larr;
           </button>
         )}
-        <motion.img
+        <MotionImage
           key={current.src}
           src={current.src}
           alt={current.alt}
+          width={1568}
+          height={736}
+          sizes="100vw"
+          quality={85}
           initial={{ opacity: 0, scale: reduce ? 1 : 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: reduce ? 0 : 0.25 }}
-          className="max-h-full max-w-full object-contain border border-hairline"
+          className="h-auto w-auto max-h-full max-w-full object-contain border border-hairline"
         />
         {total > 1 && (
           <button

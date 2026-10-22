@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import Chip from "../atoms/Chip";
 import es from "../../i18n/es";
+import Image from "next/image";
 
 const linkClass =
   "text-xs text-mute hover:text-accent transition-colors rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
@@ -117,11 +118,12 @@ export default function ProjectIndexRow({
             >
               <div className="overflow-hidden">
                 <div className="flex flex-col gap-4 pb-6">
-                  <img
+                  <Image
                     src={first.src}
                     alt={first.alt ?? nombre}
                     width={1568}
                     height={736}
+                    sizes="(min-width: 1152px) 1088px, 100vw"
                     loading="lazy"
                     className="w-full aspect-[1568/736] object-cover border border-hairline"
                   />

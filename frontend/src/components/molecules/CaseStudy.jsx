@@ -15,6 +15,7 @@ import Chip from "../atoms/Chip";
 import Lightbox from "./Lightbox";
 
 import es from "../../i18n/es";
+import Image from "next/image";
 
 const SCREEN_PER_SHOT = 60;
 const DESKTOP = "(min-width: 1024px)";
@@ -107,12 +108,20 @@ export default function CaseStudy({
   const trackStyle = { "--case-h": `${100 + (count - 1) * SCREEN_PER_SHOT}vh` };
 
   return (
-    <article ref={articleRef} aria-labelledby={titleId} data-case={slug} className="relative">
+    <article
+      ref={articleRef}
+      aria-labelledby={titleId}
+      data-case={slug}
+      className="relative"
+    >
       <div ref={trackRef} style={trackStyle} className="lg:h-(--case-h)">
         <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:py-20">
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-12 w-full items-center">
             <div className="lg:col-span-5 flex flex-col gap-5 min-w-0">
-              <motion.p {...reveal(0)} className="flex items-baseline gap-4 text-sm text-mute">
+              <motion.p
+                {...reveal(0)}
+                className="flex items-baseline gap-4 text-sm text-mute"
+              >
                 <span
                   aria-hidden="true"
                   className="text-7xl sm:text-8xl lg:text-9xl font-bold leading-none tracking-tighter text-transparent"
@@ -131,10 +140,17 @@ export default function CaseStudy({
               >
                 {nombre}
               </motion.h3>
-              <motion.p {...reveal(0.2)} className="text-body leading-relaxed max-w-prose">
+              <motion.p
+                {...reveal(0.2)}
+                className="text-body leading-relaxed max-w-prose"
+              >
                 {descripcion}
               </motion.p>
-              <motion.ul {...reveal(0.3)} aria-label="stack" className="flex flex-wrap gap-2">
+              <motion.ul
+                {...reveal(0.3)}
+                aria-label="stack"
+                className="flex flex-wrap gap-2"
+              >
                 {tecnologias.map((tech) => (
                   <li key={tech}>
                     <Chip className="inline-block px-2 py-1">{tech}</Chip>
@@ -184,10 +200,13 @@ export default function CaseStudy({
                       className="relative block w-full aspect-[1568/736] overflow-hidden cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-accent"
                     >
                       {images.map((img, i) => (
-                        <img
+                        <Image
                           key={img.src}
                           src={img.src}
                           alt={img.alt}
+                          width={1568}
+                          height={736}
+                          sizes="(min-width: 1024px) 720px, 100vw"
                           loading={i === 0 ? "eager" : "lazy"}
                           draggable={false}
                           aria-hidden={i !== active}
@@ -224,9 +243,12 @@ export default function CaseStudy({
                           }}
                           className="block w-full aspect-[1568/736] cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-accent"
                         >
-                          <img
+                          <Image
                             src={img.src}
                             alt={img.alt}
+                            width={1568}
+                            height={736}
+                            sizes="100vw"
                             loading={i === 0 ? "eager" : "lazy"}
                             draggable={false}
                             className="w-full h-full object-cover object-top"
@@ -252,7 +274,10 @@ export default function CaseStudy({
                       aria-label={t.caseProgress}
                       className="flex items-center gap-2 shrink-0"
                     >
-                      <li aria-hidden="true" className="text-sm font-medium text-accent mr-2">
+                      <li
+                        aria-hidden="true"
+                        className="text-sm font-medium text-accent mr-2"
+                      >
                         {pad(active + 1)}/{pad(count)}
                       </li>
                       {images.map((img, i) => (

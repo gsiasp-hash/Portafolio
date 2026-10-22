@@ -59,7 +59,9 @@ describe("FeaturedProjects", () => {
   it("usa screenshot como fallback si images está vacía", () => {
     render(<FeaturedProjects lang="es" items={[items[1]]} />);
     const imgs = screen.getAllByRole("img", { hidden: true });
-    expect(imgs[0]).toHaveAttribute("src", "/projects/dos.png");
+    expect(imgs[0].getAttribute("src")).toContain(
+      encodeURIComponent("/projects/dos.png")
+    );
   });
 
   it("cambia la captura activa con el indicador", async () => {
