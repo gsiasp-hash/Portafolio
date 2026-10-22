@@ -114,6 +114,10 @@ const en = {
     nextProject: "next project",
     moreProjects: "more projects",
     viewDetail: "view details",
+    caseLabel: "case study",
+    caseSectionLabel: "Featured case studies",
+    caseProgress: "Case screenshots",
+    caseHint: "scroll to walk through the screenshots",
   },
   contact: {
     title: "Contact",
