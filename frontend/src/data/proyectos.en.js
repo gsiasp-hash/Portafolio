@@ -56,12 +56,4 @@ export const proyectosEn = {
       "Static multi-page site built with HTML5 and CSS3, focused on responsive layout and a clear visual hierarchy to highlight each offer and make the terms easy to read.",
     ],
   },
-  inmobiliaria: {
-    descripcion:
-      "Real estate listing site with property search and detail pages for each property.",
-    resumen: [
-      "Real estate site that presents properties for sale and for rent, with dedicated pages per type of operation and individual pages for each property in the catalog.",
-      "Static project built with HTML5, CSS3 and vanilla JavaScript, focused on a responsive layout and on the visual presentation of the property portfolio.",
-    ],
-  },
 };

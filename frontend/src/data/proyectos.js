@@ -97,21 +97,6 @@ export const proyectos = [
     demoUrl: "https://gsiasp-hash.github.io/Cuppon/",
     repoUrl: "https://github.com/gsiasp-hash/Cuppon",
   },
-  {
-    slug: "inmobiliaria",
-    nombre: "Inmobiliaria",
-    descripcion:
-      "Sitio de listado de propiedades inmobiliarias con búsqueda de inmuebles y fichas de detalle por propiedad.",
-    resumen: [
-      "Sitio de bienes raíces que presenta propiedades en venta y en arriendo, con páginas dedicadas por tipo de operación y fichas individuales por inmueble dentro del catálogo.",
-      "Proyecto estático construido con HTML5, CSS3 y JavaScript vanilla, centrado en un layout responsive y en la presentación visual del portafolio de propiedades.",
-    ],
-    imagen: "https://opengraph.githubassets.com/1/gsiasp-hash/Inmobiliaria",
-    screenshot: "/projects/inmobiliaria.png",
-    tecnologias: ["HTML", "JavaScript", "CSS"],
-    demoUrl: "https://gsiasp-hash.github.io/Inmobiliaria/",
-    repoUrl: "https://github.com/gsiasp-hash/Inmobiliaria",
-  },
 ];
 
 function localizar(proyecto, lang) {

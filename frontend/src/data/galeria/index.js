@@ -4,7 +4,6 @@ import studioFest from "./studio-fest";
 import asistenteRag from "./asistente-rag";
 import pizzeria from "./pizzeria";
 import cuppon from "./cuppon";
-import inmobiliaria from "./inmobiliaria";
 
 const galerias = {
   "promusic-academia": promusicAcademia,
@@ -13,7 +12,6 @@ const galerias = {
   "asistente-rag": asistenteRag,
   pizzeria,
   cuppon,
-  inmobiliaria,
 };
 
 export function getGaleria(slug, lang = "es") {
