@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  agentRules: false,
   outputFileTracingRoot: import.meta.dirname,
   async headers() {
     return [
