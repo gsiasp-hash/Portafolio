@@ -1,5 +1,6 @@
 import SectionHeader from "../atoms/SectionHeader";
-import ProjectsGrid from "../molecules/ProjectsGrid";
+import FeaturedProjects from "../molecules/FeaturedProjects";
+import ProjectIndex from "../molecules/ProjectIndex";
 import { AnimatedSectionUp } from "../templates/AnimatedSection";
 import { getProyectos } from "../../data/proyectos";
 import { getGaleria } from "../../data/galeria";
@@ -10,6 +11,9 @@ export default function Projects({ lang = "es", t = es.projects }) {
     ...proyecto,
     images: getGaleria(proyecto.slug, lang),
   }));
+  const featured = items.filter((item) => item.destacado);
+  const rest = items.filter((item) => !item.destacado);
+
   return (
     <section
       id="proyectos"
@@ -18,9 +22,8 @@ export default function Projects({ lang = "es", t = es.projects }) {
       <AnimatedSectionUp>
         <SectionHeader title={t.title} scramble />
       </AnimatedSectionUp>
-      <AnimatedSectionUp>
-        <ProjectsGrid lang={lang} t={t} items={items} />
-      </AnimatedSectionUp>
+      <FeaturedProjects lang={lang} t={t} items={featured} />
+      <ProjectIndex lang={lang} t={t} items={rest} />
     </section>
   );
 }

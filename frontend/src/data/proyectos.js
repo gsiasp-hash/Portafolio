@@ -3,6 +3,7 @@ import { proyectosEn } from "./proyectos.en";
 export const proyectos = [
   {
     slug: "promusic-academia",
+    destacado: true,
     nombre: "Promusic Academia",
     descripcion:
       "Landing page de la academia de Promusic construida a medida dentro de su tienda Shopify: cursos vigentes, catálogo de cursos realizados, historia y preguntas frecuentes. Demuestra el manejo de Shopify más allá del catálogo.",
@@ -19,6 +20,7 @@ export const proyectos = [
   },
   {
     slug: "promusic-chat",
+    destacado: true,
     nombre: "Chatbot IA Promusic",
     descripcion:
       "Chatbot comercial con IA integrado en la tienda Shopify de Promusic: responde consultas de catálogo, servicios y tienda en tiempo real, gestiona carrito y seguimiento de envío, y deriva a ventas cuando corresponde.",
@@ -35,6 +37,7 @@ export const proyectos = [
   },
   {
     slug: "studio-fest",
+    destacado: true,
     nombre: "Studio Fest — App de Registro",
     descripcion:
       "App de pre-inscripción, check-in de staff y vista pública para Studio Fest, el evento de Promusic con 4 espacios funcionando en simultáneo.",
