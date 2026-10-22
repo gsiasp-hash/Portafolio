@@ -16,22 +16,37 @@ export default function Button({
   size = "md",
   href,
   className = "",
+  arrow = false,
   children,
   ...props
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 ${sizes[size]} rounded-sm text-sm font-medium cursor-pointer transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none ${variants[variant]} ${className}`;
+  const classes = `group inline-flex items-center justify-center gap-2 ${sizes[size]} rounded-sm text-sm font-medium cursor-pointer transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none ${variants[variant]} ${className}`;
+
+  const content = (
+    <>
+      {children}
+      {arrow && (
+        <span
+          aria-hidden="true"
+          className="transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1"
+        >
+          →
+        </span>
+      )}
+    </>
+  );
 
   if (href) {
     return (
       <a href={href} className={classes} {...props}>
-        {children}
+        {content}
       </a>
     );
   }
 
   return (
     <button type="button" className={classes} {...props}>
-      {children}
+      {content}
     </button>
   );
 }

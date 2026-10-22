@@ -33,6 +33,11 @@ const es = {
     roleSuffix: "Ingeniero en Sonido con 10+ años en tecnología",
     viewProjects: "Ver Proyectos",
     contactMe: "Contactame",
+    prompt: "stack",
+    roles: ["JavaScript", "React", "Node.js", "Tailwind", "Shopify", "Ingeniero en Sonido"],
+    stats: { years: "años en tecnología", projects: "proyectos publicados" },
+    scroll: "Scroll",
+    visualizerLabel: "Visualizador de audio decorativo",
   },
   about: {
     title: "Sobre mi",
