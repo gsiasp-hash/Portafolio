@@ -359,7 +359,7 @@ export default function CommandPalette({ lang = "es", t = es.palette }) {
   const announce = copied
     ? t.announceCopied
     : results.length
-      ? `${results.length} ${t.announceResults}`
+      ? `${results.length} ${results.length === 1 ? t.announceResultOne : t.announceResults}`
       : t.announceNone;
 
   const grouped = GROUPS.map((group) => ({
@@ -501,7 +501,7 @@ export default function CommandPalette({ lang = "es", t = es.palette }) {
           <span className="hidden sm:inline">{t.help}</span>
           <span className="sm:hidden">↑↓ ↵ esc</span>
           <span>
-            {results.length} {t.results}
+            {results.length} {results.length === 1 ? t.resultOne : t.results}
           </span>
         </div>
 
