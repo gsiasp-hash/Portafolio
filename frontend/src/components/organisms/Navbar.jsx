@@ -6,11 +6,12 @@ import NavLink from "../atoms/NavLink";
 import MobileMenu from "../molecules/MobileMenu";
 import ThemeToggle from "../atoms/ThemeToggle";
 import LanguageToggle from "../atoms/LanguageToggle";
+import PaletteHint from "../atoms/PaletteHint";
 import es from "../../i18n/es";
 
 const sectionIds = ["sobre-mi", "skills", "proyectos", "contacto"];
 
-export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme }) {
+export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme, paletteT = es.palette }) {
   const links = [
     { label: t.about, href: `/${lang}#sobre-mi`, id: "sobre-mi" },
     { label: t.skills, href: `/${lang}#skills`, id: "skills" },
@@ -79,11 +80,13 @@ export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme }) {
           >
             {t.contact}
           </Button>
+          <PaletteHint t={paletteT} />
           <LanguageToggle lang={lang} t={t} />
           <ThemeToggle t={themeT} />
         </div>
 
         <div className="md:hidden flex items-center gap-4">
+          <PaletteHint compact t={paletteT} />
           <LanguageToggle lang={lang} t={t} />
           <ThemeToggle t={themeT} />
           <button
