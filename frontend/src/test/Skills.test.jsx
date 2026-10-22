@@ -8,17 +8,23 @@ describe("Skills", () => {
     expect(screen.getByLabelText("Skills")).toBeInTheDocument();
   });
 
-  it("renders skill categories", () => {
+  it("expone todas las tecnologías en la cinta", () => {
     render(<Skills />);
-    expect(screen.getByText("Lenguajes")).toBeInTheDocument();
-    expect(screen.getByText("Frameworks y librerías")).toBeInTheDocument();
-    expect(screen.getByText("Plataformas")).toBeInTheDocument();
+    const cinta = screen.getByRole("img", { name: /^Tecnologías:/ });
+    for (const skill of [
+      "JavaScript",
+      "React",
+      "React Router",
+      "Tailwind CSS",
+      "Shopify",
+    ]) {
+      expect(cinta.getAttribute("aria-label")).toContain(skill);
+    }
   });
 
-  it("renders individual skills", () => {
+  it("no renderiza grupos de categorías", () => {
     render(<Skills />);
-    expect(screen.getByText(/JavaScript/)).toBeInTheDocument();
-    expect(screen.getAllByText(/React/)).toHaveLength(2); // React and React Router
-    expect(screen.getByText(/Tailwind/)).toBeInTheDocument();
+    expect(screen.queryByText("Lenguajes")).not.toBeInTheDocument();
+    expect(screen.queryByRole("group")).not.toBeInTheDocument();
   });
 });

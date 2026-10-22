@@ -25,10 +25,10 @@ describe("i18n", () => {
     expect(screen.getByText("Contact me")).toBeInTheDocument();
   });
 
-  it("traduce los grupos de skills", () => {
+  it("traduce la cinta de skills", () => {
     render(<Skills t={en.skills} />);
-    expect(screen.getByText("Languages")).toBeInTheDocument();
-    expect(screen.getByText(/Agentic programming/)).toBeInTheDocument();
+    const cinta = screen.getByRole("img", { name: /^Technologies:/ });
+    expect(cinta.getAttribute("aria-label")).toContain("Agentic programming");
   });
 
   it("localiza los textos de proyectos", () => {

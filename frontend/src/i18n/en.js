@@ -83,18 +83,7 @@ const en = {
   },
   skills: {
     title: "Skills",
-    all: "All",
-    filterLabel: "Filter by category",
     marqueeLabel: "Technologies",
-    groups: {
-      lenguajes: "Languages",
-      frameworks: "Frameworks and libraries",
-      backend: "Backend and data",
-      ia: "Generative AI",
-      especialidades: "Specialties",
-      versiones: "Version control",
-      plataformas: "Platforms",
-    },
     items: {
       agentic: "Agentic programming",
       testing: "Testing (Vitest)",

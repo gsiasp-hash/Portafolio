@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi, afterEach } from "vitest";
 import About from "../components/organisms/About";
@@ -29,25 +29,6 @@ describe("About", () => {
 });
 
 describe("Skills", () => {
-  it("filtra por categoría y vuelve a mostrar todo", async () => {
-    const user = userEvent.setup();
-    render(<Skills />);
-    const filtros = screen.getByRole("group", { name: "Filtrar por categoría" });
-    expect(within(filtros).getAllByRole("button")).toHaveLength(8);
-    expect(screen.getByText("Lenguajes")).toBeInTheDocument();
-    expect(screen.getByText("Plataformas")).toBeInTheDocument();
-
-    await user.click(within(filtros).getByRole("button", { name: "[Lenguajes]" }));
-    expect(
-      within(filtros).getByRole("button", { name: "[Lenguajes]" })
-    ).toHaveAttribute("aria-pressed", "true");
-    await vi.waitFor(() => expect(screen.queryByText("Plataformas")).not.toBeInTheDocument());
-    expect(screen.getByText("Lenguajes")).toBeInTheDocument();
-
-    await user.click(within(filtros).getByRole("button", { name: "[Todo]" }));
-    expect(await screen.findByText("Plataformas")).toBeInTheDocument();
-  });
-
   it("expone la cinta de tecnologías con etiqueta accesible", () => {
     render(<Skills />);
     expect(screen.getByRole("img", { name: /^Tecnologías: HTML/ })).toBeInTheDocument();

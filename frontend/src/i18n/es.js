@@ -83,18 +83,7 @@ const es = {
   },
   skills: {
     title: "Skills",
-    all: "Todo",
-    filterLabel: "Filtrar por categoría",
     marqueeLabel: "Tecnologías",
-    groups: {
-      lenguajes: "Lenguajes",
-      frameworks: "Frameworks y librerías",
-      backend: "Backend y datos",
-      ia: "IA generativa",
-      especialidades: "Especialidades",
-      versiones: "Control de versiones",
-      plataformas: "Plataformas",
-    },
     items: {
       agentic: "Programación agéntica",
       testing: "Testing (Vitest)",
