@@ -25,7 +25,7 @@ export default function SkillsMarquee({ items, label }) {
     <div
       role="img"
       aria-label={`${label}: ${items.join(", ")}`}
-      className="space-y-3 py-6 mb-10 border-y border-hairline"
+      className="space-y-3 pb-6 border-b border-hairline"
     >
       <Row items={items.slice(0, mid)} duration={46} />
       <Row items={items.slice(mid)} reverse duration={52} />

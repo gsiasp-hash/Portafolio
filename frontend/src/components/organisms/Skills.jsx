@@ -11,10 +11,10 @@ export default function Skills({ t = es.skills }) {
   return (
     <section
       id="skills"
-      className="text-ink py-16 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto"
+      className="text-ink py-8 px-4 sm:px-6 lg:px-8 w-full max-w-6xl mx-auto"
     >
       <AnimatedSectionUp>
-        <SectionHeader title={t.title} className="mb-10" scramble />
+        <SectionHeader title={t.title} scramble />
       </AnimatedSectionUp>
       <SkillsMarquee items={todas} label={t.marqueeLabel} />
     </section>
