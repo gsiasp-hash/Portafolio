@@ -38,8 +38,8 @@ export async function generateMetadata({ params }) {
       images: [
         {
           url: "/og-image.png",
-          width: 1199,
-          height: 693,
+          width: 1200,
+          height: 630,
           alt: "Guillermo Sias — Full Stack Developer",
         },
       ],
