@@ -10,16 +10,16 @@ export default function Home({ lang, dict }) {
   return (
     <div className="min-h-screen flex flex-col font-mono">
       <Hero t={dict.hero} />
-      <AnimatedSection>
+      <AnimatedSection variant="left">
         <About t={dict.about} />
       </AnimatedSection>
-      <AnimatedSection>
+      <AnimatedSection variant="up">
         <Skills t={dict.skills} />
       </AnimatedSection>
       <AnimatedSection>
         <Projects lang={lang} t={dict.projects} />
       </AnimatedSection>
-      <AnimatedSection>
+      <AnimatedSection variant="scale">
         <Contact t={dict.contact} />
       </AnimatedSection>
       <ScrollToTop label={dict.scrollTop} />

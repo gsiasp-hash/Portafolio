@@ -1,11 +1,19 @@
 import SectionHeader from "../atoms/SectionHeader";
-import SkillGroup from "../molecules/SkillGroup";
+import SkillsExplorer from "../molecules/SkillsExplorer";
+import SkillsMarquee from "../molecules/SkillsMarquee";
 import { AnimatedSectionUp } from "../templates/AnimatedSection";
 import { skills } from "../../data/skills";
 import es from "../../i18n/es";
 
 export default function Skills({ t = es.skills }) {
   const traducir = (item) => (item.startsWith("@") ? t.items[item.slice(1)] : item);
+  const groups = skills.map(({ id, skills: items }) => ({
+    id,
+    titulo: t.groups[id],
+    items: items.map(traducir),
+  }));
+  const todas = [...new Set(groups.flatMap(({ items }) => items))];
+
   return (
     <section
       id="skills"
@@ -14,16 +22,8 @@ export default function Skills({ t = es.skills }) {
       <AnimatedSectionUp>
         <SectionHeader title={t.title} className="mb-10" scramble />
       </AnimatedSectionUp>
-      <AnimatedSectionUp className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {skills.map(({ id, skills: items }) => (
-          <SkillGroup
-            key={id}
-            titulo={t.groups[id]}
-            items={items.map(traducir)}
-            className="h-full"
-          />
-        ))}
-      </AnimatedSectionUp>
+      <SkillsMarquee items={todas} label={t.marqueeLabel} />
+      <SkillsExplorer groups={groups} allLabel={t.all} filterLabel={t.filterLabel} />
     </section>
   );
 }

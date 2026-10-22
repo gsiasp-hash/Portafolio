@@ -51,9 +51,36 @@ const en = {
         description: "RAG assistant deployed in production",
       },
     ],
+    stats: {
+      years: "years in audio and live production",
+      tech: "technologies in my stack",
+      projects: "published projects",
+    },
+    timelineTitle: "Journey",
+    timeline: [
+      {
+        title: "Audio and live production",
+        description: "10+ years of technical leadership, where live leaves no room for error",
+      },
+      {
+        title: "Front End",
+        description: "Certified by Desafío Latam with JavaScript, TypeScript, React and Next.js",
+      },
+      {
+        title: "Full Stack",
+        description: "Pursuing the Full Stack specialization with Node.js",
+      },
+      {
+        title: "Generative AI",
+        description: "RAG support assistant and conversational portfolio in production",
+      },
+    ],
   },
   skills: {
     title: "Skills",
+    all: "All",
+    filterLabel: "Filter by category",
+    marqueeLabel: "Technologies",
     groups: {
       lenguajes: "Languages",
       frameworks: "Frameworks and libraries",
@@ -95,10 +122,14 @@ const en = {
       sending: "[sending...]",
       ok: "[ok] message sent. i will get back to you shortly.",
       errorPrefix: "[error] it could not be sent. write to me at",
+      invalidName: "at least 2 characters",
+      invalidEmail: "check the email format",
+      invalidMessage: "at least 10 characters",
     },
   },
   footer: {
     tagline: "audio & code",
+    linksLabel: "Links",
   },
   chat: {
     dialogLabel: "Chat with Guillermo's AI assistant",

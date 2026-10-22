@@ -19,6 +19,14 @@ export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme }) {
 
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const [compact, setCompact] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setCompact(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,9 +49,20 @@ export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme }) {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-40 border-b border-hairline bg-canvas">
-      <div className="max-w-6xl mx-auto flex justify-between items-center h-14 px-6">
-        <div className="text-xs leading-none select-none">
+    <nav
+      data-compact={compact}
+      className="sticky top-0 z-40 border-b border-hairline bg-canvas transition-colors duration-300 data-[compact=true]:border-ink/20"
+    >
+      <div
+        className={`max-w-6xl mx-auto flex justify-between items-center px-6 transition-[height] duration-300 ease-out ${
+          compact ? "h-11" : "h-14"
+        }`}
+      >
+        <div
+          className={`text-xs leading-none select-none origin-left transition-transform duration-300 ${
+            compact ? "scale-90" : ""
+          }`}
+        >
           [ <span className="text-accent">GS</span> ]
         </div>
 

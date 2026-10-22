@@ -15,6 +15,17 @@ if (typeof window !== "undefined" && typeof window.matchMedia !== "function") {
     }));
 }
 
+if (typeof globalThis.IntersectionObserver === "undefined") {
+  globalThis.IntersectionObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+    takeRecords() {
+      return [];
+    }
+  };
+}
+
 if (typeof localStorage === "undefined") {
   const store = new Map();
   const storage = {

@@ -3,6 +3,7 @@ import ContactForm from "../molecules/ContactForm";
 import SectionHeader from "../atoms/SectionHeader";
 import SpotlightCard from "../rb/SpotlightCard";
 import { enlaces } from "../../data/contacto";
+import { AnimatedSectionUp } from "../templates/AnimatedSection";
 import es from "../../i18n/es";
 
 export default function Contact({ t = es.contact }) {
@@ -13,20 +14,24 @@ export default function Contact({ t = es.contact }) {
     >
       <SectionHeader title={t.title} />
       <p className="text-sm text-body leading-relaxed max-w-3xl mb-8">{t.intro}</p>
-      <ContactForm t={t.form} />
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
-        {enlaces.map(({ label, value, href, copy }) => (
-          <SpotlightCard key={label} className="rounded-sm">
-            <ContactCard
-              href={copy ? undefined : href}
-              copy={copy}
-              label={label}
-              value={value}
-              t={t}
-            />
-          </SpotlightCard>
-        ))}
-      </div>
+      <AnimatedSectionUp className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
+        <div className="lg:col-span-3">
+          <ContactForm t={t.form} />
+        </div>
+        <div className="lg:col-span-2 flex flex-col gap-4">
+          {enlaces.map(({ label, value, href, copy }) => (
+            <SpotlightCard key={label} className="rounded-sm">
+              <ContactCard
+                href={copy ? undefined : href}
+                copy={copy}
+                label={label}
+                value={value}
+                t={t}
+              />
+            </SpotlightCard>
+          ))}
+        </div>
+      </AnimatedSectionUp>
     </section>
   );
 }
