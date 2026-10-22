@@ -125,6 +125,11 @@ const es = {
     nextProject: "proyecto siguiente",
     moreProjects: "más proyectos",
     viewDetail: "ver detalle",
+    indexHint: "pasa el cursor sobre un proyecto para ver capturas",
+    indexHintTouch: "toca un proyecto para expandirlo",
+    indexListLabel: "Índice de más proyectos",
+    indexToggle: "Mostrar u ocultar detalles de",
+    indexExternal: "se abre en una pestaña nueva",
   },
   contact: {
     title: "Contacto",

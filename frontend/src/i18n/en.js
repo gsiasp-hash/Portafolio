@@ -125,6 +125,11 @@ const en = {
     nextProject: "next project",
     moreProjects: "more projects",
     viewDetail: "view details",
+    indexHint: "hover a project to preview screenshots",
+    indexHintTouch: "tap a project to expand it",
+    indexListLabel: "Index of more projects",
+    indexToggle: "Show or hide details of",
+    indexExternal: "opens in a new tab",
   },
   contact: {
     title: "Contact",
