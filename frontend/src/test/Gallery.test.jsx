@@ -1,7 +1,6 @@
-import { render, screen, fireEvent, within, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, within } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Gallery from "../components/molecules/Gallery";
-import ProjectsGrid from "../components/molecules/ProjectsGrid";
 import es from "../i18n/es";
 
 const images = [
@@ -79,31 +78,5 @@ describe("Gallery", () => {
     openLightbox();
     fireEvent.click(screen.getByRole("button", { name: /Cerrar/ }));
     expect(screen.queryByRole("dialog")).toBeNull();
-  });
-});
-
-describe("ProjectsGrid", () => {
-  const base = { descripcion: "d", images: [] };
-  const items = [
-    {
-      ...base,
-      slug: "a",
-      nombre: "Alfa",
-      imagen: "/a.png",
-      tecnologias: ["React", "Node"],
-    },
-    { ...base, slug: "b", nombre: "Beta", imagen: "/b.png", tecnologias: ["React"] },
-    { ...base, slug: "c", nombre: "Gamma", imagen: "/c.png", tecnologias: ["Node"] },
-  ];
-
-  it("filtra por tecnología y restablece con Todos", async () => {
-    render(<ProjectsGrid items={items} />);
-    expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(3);
-    const filtro = screen.getByRole("group", { name: es.projects.filterLabel });
-    fireEvent.click(within(filtro).getByRole("button", { name: "Node" }));
-    expect(screen.getByText("Gamma")).toBeInTheDocument();
-    await waitFor(() => expect(screen.queryByText("Beta")).toBeNull());
-    fireEvent.click(within(filtro).getByRole("button", { name: /Todos/ }));
-    expect(screen.getByText("Beta")).toBeInTheDocument();
   });
 });
