@@ -125,6 +125,10 @@ const es = {
     nextProject: "proyecto siguiente",
     moreProjects: "más proyectos",
     viewDetail: "ver detalle",
+    caseLabel: "caso de estudio",
+    caseSectionLabel: "Casos de estudio destacados",
+    caseProgress: "Capturas del caso",
+    caseHint: "scroll para recorrer las capturas",
   },
   contact: {
     title: "Contacto",
