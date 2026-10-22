@@ -93,6 +93,7 @@ export default function Particles({
   cameraDistance = 22,
   cameraFov = 55,
   disableRotation = false,
+  scrollParallax = false,
   pixelRatio = 1,
   className = ''
 }) {
@@ -130,7 +131,7 @@ export default function Particles({
         const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
         mouseRef.current = { x, y };
       };
-      container.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mousemove', handleMouseMove);
     }
 
     const count = particleCount;
@@ -179,20 +180,35 @@ export default function Particles({
     let lastTime = performance.now();
     let elapsed = 0;
 
+    let visible = !document.hidden;
+    const onVisibility = () => {
+      visible = !document.hidden;
+      lastTime = performance.now();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    let smoothX = 0;
+    let smoothY = 0;
+
     const update = (t) => {
       animationFrameId = requestAnimationFrame(update);
       const delta = t - lastTime;
       lastTime = t;
+      if (!visible) return;
       elapsed += delta * speed;
 
       program.uniforms.uTime.value = elapsed * 0.001;
 
       if (moveParticlesOnHover) {
-        particles.position.x = -mouseRef.current.x * particleHoverFactor;
-        particles.position.y = -mouseRef.current.y * particleHoverFactor;
+        smoothX += (-mouseRef.current.x * particleHoverFactor - smoothX) * 0.05;
+        smoothY += (-mouseRef.current.y * particleHoverFactor - smoothY) * 0.05;
+        particles.position.x = smoothX;
+        particles.position.y = smoothY;
       } else {
         particles.position.x = 0;
         particles.position.y = 0;
+      }
+      if (scrollParallax) {
+        particles.position.y += window.scrollY * 0.004;
       }
 
       if (!disableRotation) {
@@ -208,8 +224,9 @@ export default function Particles({
 
     return () => {
       window.removeEventListener('resize', resize);
+      document.removeEventListener('visibilitychange', onVisibility);
       if (moveParticlesOnHover && handleMouseMove) {
-        container.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mousemove', handleMouseMove);
       }
       cancelAnimationFrame(animationFrameId);
       if (container.contains(gl.canvas)) {
@@ -228,6 +245,7 @@ export default function Particles({
     cameraDistance,
     cameraFov,
     disableRotation,
+    scrollParallax,
     pixelRatio,
     particleColors
   ]);
