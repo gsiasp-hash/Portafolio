@@ -1,11 +1,11 @@
 export const proyectosEn = {
   "promusic-academia": {
     descripcion:
-      "Landing page for Promusic's academy, custom-built inside its Shopify store: current courses, campus, corporate training and FAQ. It showcases Shopify skills beyond the product catalog.",
+      "Landing page for Promusic's academy, custom-built inside its Shopify store: current courses, catalog of past courses, history and FAQ. It showcases Shopify skills beyond the product catalog.",
     resumen: [
       "Landing page for Promusic Academia, Promusic's technical training body for live audio, lighting, music production and the entertainment industry. It lives inside the brand's Shopify store (promusic.cl) and is designed so any visitor understands what is taught, when, and how to enroll.",
       "It showcases Shopify skills beyond the product catalog: a fully custom page integrated into the store theme that keeps the brand's navigation, cart and style while presenting editorial and service content, with no external apps or separate site.",
-      "The page brings together in a single flow the current courses and sessions with date, price, seats and instructor, a presentation of the Ñuñoa campus, custom corporate training programs, the history of past courses, the academy's story and values, and a collapsible FAQ section.",
+      "The page brings together in a single flow the current courses and sessions with date, price, seats and instructor, the catalog of past courses in expandable cards, a carousel with the academy's educational history and an accordion FAQ section.",
       "Each course is shown in an expandable card with its details and clear calls to action: enrollment, PDF syllabus or ticket purchase for live sessions. The design is responsive and blends with the navigation and style of the rest of the store.",
     ],
   },

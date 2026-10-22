@@ -5,11 +5,11 @@ export const proyectos = [
     slug: "promusic-academia",
     nombre: "Promusic Academia",
     descripcion:
-      "Landing page de la academia de Promusic construida a medida dentro de su tienda Shopify: cursos vigentes, campus, capacitación corporativa y preguntas frecuentes. Demuestra el manejo de Shopify más allá del catálogo.",
+      "Landing page de la academia de Promusic construida a medida dentro de su tienda Shopify: cursos vigentes, catálogo de cursos realizados, historia y preguntas frecuentes. Demuestra el manejo de Shopify más allá del catálogo.",
     resumen: [
       "Landing page de Promusic Academia, el organismo de capacitación técnica de Promusic en audio en vivo, iluminación, producción musical e industria del entretenimiento. Vive dentro de la tienda Shopify de la marca (promusic.cl) y está pensada para que cualquier visitante entienda qué se dicta, cuándo y cómo inscribirse.",
       "Es una muestra del manejo de Shopify más allá del catálogo de productos: una página totalmente a medida integrada al tema de la tienda, que conserva la navegación, el carrito y el estilo de la marca mientras presenta contenido editorial y de servicios, sin apps externas ni un sitio aparte.",
-      "La página reúne en un solo recorrido los cursos y sesiones vigentes con fecha, precio, cupos e instructor, una presentación del campus en Ñuñoa, los programas de capacitación corporativa a medida, el historial de cursos anteriores, la historia y valores de la academia, y una sección de preguntas frecuentes colapsables.",
+      "La página reúne en un solo recorrido los cursos y sesiones vigentes con fecha, precio, cupos e instructor, el catálogo de cursos anteriores en tarjetas expandibles, un carrusel con la historia educativa de la academia y una sección de preguntas frecuentes en acordeón.",
       "Cada curso se presenta en una tarjeta expandible con su detalle y llamadas a la acción claras: inscripción, programa en PDF o compra de entrada para sesiones en vivo. El diseño es responsive y se integra con la navegación y el estilo del resto de la tienda.",
     ],
     imagen: "/projects/promusic-academia.png",
