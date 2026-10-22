@@ -61,6 +61,20 @@ export default function ChatWidget({ t = es.chat }) {
     marcarVisto();
   };
 
+  useEffect(() => {
+    const onOpenChat = () => {
+      setOpen(true);
+      setShowTeaser(false);
+      try {
+        localStorage.setItem(TEASER_KEY, "1");
+      } catch {
+        return;
+      }
+    };
+    window.addEventListener("open-chat", onOpenChat);
+    return () => window.removeEventListener("open-chat", onOpenChat);
+  }, []);
+
   return (
     <>
       {open && (
