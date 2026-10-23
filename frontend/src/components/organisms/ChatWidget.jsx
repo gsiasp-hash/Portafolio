@@ -88,7 +88,7 @@ export default function ChatWidget({ t = es.chat }) {
       )}
 
       {showTeaser && !open && (
-        <div className="fixed bottom-16 right-4 sm:right-6 z-[60] w-[calc(100vw-2rem)] sm:w-[280px] border border-hairline bg-surface-card p-3">
+        <div className="hidden sm:block fixed bottom-16 right-6 z-[60] w-[280px] border border-hairline bg-surface-card p-3">
           <button
             type="button"
             onClick={marcarVisto}
