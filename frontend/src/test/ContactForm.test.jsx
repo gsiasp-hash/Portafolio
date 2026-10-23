@@ -4,10 +4,10 @@ import { describe, it, expect, vi, afterEach } from "vitest";
 import ContactForm from "../components/molecules/ContactForm";
 
 async function llenarYEnviar(user) {
-  await user.type(screen.getByLabelText(/\[nombre\]/), "Ana");
-  await user.type(screen.getByLabelText(/\[email\]/), "ana@test.com");
+  await user.type(screen.getByLabelText(/^nombre$/i), "Ana");
+  await user.type(screen.getByLabelText(/^email$/i), "ana@test.com");
   await user.type(
-    screen.getByLabelText(/\[mensaje\]/),
+    screen.getByLabelText(/^mensaje$/i),
     "Hola, te escribo por una oportunidad laboral"
   );
   await user.click(screen.getByRole("button", { name: /enviar/i }));
@@ -26,7 +26,7 @@ describe("ContactForm", () => {
     render(<ContactForm />);
     await llenarYEnviar(user);
 
-    expect(await screen.findByText(/\[ok\] mensaje enviado/i)).toBeInTheDocument();
+    expect(await screen.findByText(/mensaje enviado/i)).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledWith(
       "/api/contact",
       expect.objectContaining({ method: "POST" })
@@ -40,7 +40,7 @@ describe("ContactForm", () => {
     render(<ContactForm />);
     await llenarYEnviar(user);
 
-    expect(await screen.findByText(/\[error\]/)).toBeInTheDocument();
+    expect(await screen.findByText(/no fue posible enviarlo/i)).toBeInTheDocument();
     expect(screen.getByRole("alert")).toBeInTheDocument();
   });
 
@@ -60,11 +60,11 @@ describe("ContactForm", () => {
     render(<ContactForm />);
     await llenarYEnviar(user);
 
-    const enviando = screen.getByRole("button", { name: /\[enviando...\]/i });
+    const enviando = screen.getByRole("button", { name: /enviando/i });
     expect(enviando).toBeDisabled();
 
     resolverFetch({ ok: true });
-    expect(await screen.findByText(/\[ok\]/i)).toBeInTheDocument();
+    expect(await screen.findByText(/mensaje enviado/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /enviar mensaje/i })).toBeEnabled();
   });
 
@@ -73,10 +73,10 @@ describe("ContactForm", () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true }));
 
     render(<ContactForm />);
-    const nombre = screen.getByLabelText(/\[nombre\]/);
+    const nombre = screen.getByLabelText(/^nombre$/i);
     await llenarYEnviar(user);
 
-    await screen.findByText(/\[ok\]/);
+    await screen.findByText(/mensaje enviado/i);
     expect(nombre).toHaveValue("");
   });
 });

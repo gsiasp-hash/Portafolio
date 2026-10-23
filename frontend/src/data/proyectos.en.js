@@ -1,7 +1,7 @@
 export const proyectosEn = {
   "promusic-academia": {
     descripcion:
-      "Landing page for Promusic's academy, custom-built inside its Shopify store: current courses, catalog of past courses, history and FAQ. It showcases Shopify skills beyond the product catalog.",
+      "Promusic needed its own place to show its courses and handle enrollment without relying on an external app. Solved with a custom page inside its own Shopify store: current courses, history and FAQ, while keeping the brand's cart and style.",
     resumen: [
       "Landing page for Promusic Academia, Promusic's technical training body for live audio, lighting, music production and the entertainment industry. It lives inside the brand's Shopify store (promusic.cl) and is designed so any visitor understands what is taught, when, and how to enroll.",
       "It showcases Shopify skills beyond the product catalog: a fully custom page integrated into the store theme that keeps the brand's navigation, cart and style while presenting editorial and service content, with no external apps or separate site.",
@@ -11,7 +11,7 @@ export const proyectosEn = {
   },
   "promusic-chat": {
     descripcion:
-      "Commercial AI chatbot embedded in Promusic's Shopify store: answers catalog, service and store questions in real time, handles cart and shipment tracking, and hands off to sales when needed.",
+      "Promusic's store kept getting the same catalog, shipping and hours questions, and lost sales whenever no one could answer in time. The fix: an AI chatbot built into the store that answers instantly with real, up-to-date information, helps add products to the cart, and hands off to a human salesperson when a question needs it.",
     resumen: [
       "Sales and support chatbot for Promusic's Shopify store (promusic.cl), live in production and handling real customers. Built on Shopify's official chat agent template and extended with custom logic: it answers catalog questions (usage, specs, compatibility and accessories), info about the brand's spaces and Academy courses, hours, shipping, payment methods and warranties, all read live from the real store instead of static content.",
       "It can add products to the cart from the conversation, offers cross-sell based on Shopify's real product recommendations, reports shipment status, and understands Chilean pro-audio industry jargon. When a question calls for tailored advice or a custom quote, it automatically hands off to the sales team instead of improvising a recommendation.",
@@ -21,7 +21,7 @@ export const proyectosEn = {
   },
   "studio-fest": {
     descripcion:
-      "Pre-registration, staff check-in and public info app for Studio Fest, Promusic's event with 4 spaces running at the same time.",
+      "Studio Fest is a Promusic event with 4 spaces running at the same time — figuring out who was where, in which time slot, had turned into chaos with a generic tool. It was replaced with a custom app: attendees register once, staff tracks each space's attendance in real time, and the public follows the live program.",
     resumen: [
       "Custom app for Studio Fest, Promusic's event with 4 spaces running in parallel (Estudio, Live Stage, Showroom and Patio) across shared time blocks. Replaces a PowerApps-based solution: attendees pre-register once, choosing an activity per block, and each space's staff reviews and manages its own list of registrants from a dedicated PIN-protected panel.",
       'The staff panel supports real-time check-in, adding walk-ins with no prior reservation, searching by name, and viewing overall event stats. The public side shows the program, exhibitors, location and a "live now" view of what\'s happening in each space at any given moment, plus a lookup so each attendee can find their own schedule by email.',
@@ -31,7 +31,7 @@ export const proyectosEn = {
   },
   "asistente-rag": {
     descripcion:
-      "RAG-based customer support assistant: indexes knowledge PDFs and answers in a chat with streaming, conversational memory and vector search on pgvector.",
+      "Built for support teams who answer the same questions over and over: this assistant reads a company's real documents (manuals, policies, FAQs) and answers instantly based only on them — if it doesn't know something, it says so instead of making up an answer.",
     resumen: [
       "Intelligent customer support system based on RAG (Retrieval-Augmented Generation): knowledge PDFs (FAQs, policies, manuals) are uploaded and a chat answers questions in real time grounded only in those documents, with no hallucinations. It includes a multi-tenant admin panel designed for public demos.",
       "Ingestion processes the PDFs with text extraction, smart chunking and semantic embeddings. The chat streams answers token by token (SSE), keeps conversational memory of the last 10 interactions in the session and refuses honestly: if the information is not in the documents, it says so instead of making things up.",
@@ -41,7 +41,7 @@ export const proyectosEn = {
   },
   pizzeria: {
     descripcion:
-      "Full-stack pizza ordering app with catalog, cart and checkout, JWT authentication and a custom Express REST API.",
+      "A complete online pizza-ordering store: catalog, shopping cart and user accounts, built from scratch instead of on a generic template — including its own order system and secure login.",
     resumen: [
       "Full-stack pizzeria project with a pizza catalog, shopping cart and JWT-based user authentication. The frontend consumes a custom REST API that manages users, pizzas and a simulated checkout, with route protection through Bearer tokens.",
       "Global state is handled with React Context (Cart, User, Pizzas) and routing is an SPA with React Router: Login, Register, Profile, Cart, Home and a 404 page. Notifications use react-hot-toast and icons come from lucide-react.",
@@ -50,7 +50,7 @@ export const proyectosEn = {
   },
   cuppon: {
     descripcion:
-      "Platform to create and manage discount coupons, designed for small businesses that want to automate promotions.",
+      "Built for small businesses that handed out discounts by hand on social media: a platform to publish and organize discount coupons by category, all in one tidy place.",
     resumen: [
       "Discount coupon landing page organized by categories (food, technology, personal care and more), with a dedicated page per category to browse the available promotions directly.",
       "Static multi-page site built with HTML5 and CSS3, focused on responsive layout and a clear visual hierarchy to highlight each offer and make the terms easy to read.",

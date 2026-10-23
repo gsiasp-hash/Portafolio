@@ -2,13 +2,15 @@ const en = {
   meta: {
     title: "Guillermo Sias | Full Stack Developer",
     description:
-      "Portfolio of Guillermo Sias - Full Stack Developer specialized in JavaScript, React and Node.js. Sound Engineer with 10+ years in technology.",
+      "Guillermo Sias designs and builds websites, online stores and custom tools for businesses — and is also a Full Stack Developer (JavaScript, React, Node.js) with real projects in production.",
     ogDescription:
-      "Portfolio of Guillermo Sias - Full Stack Developer specialized in JavaScript, React and Node.js.",
+      "Websites, online stores and custom tools for your business — by Guillermo Sias, Full Stack Developer.",
     siteName: "Guillermo Sias — Portfolio",
     keywords: [
       "Guillermo Sias",
       "Full Stack Developer",
+      "websites for businesses",
+      "online stores",
       "JavaScript",
       "React",
       "Node.js",
@@ -30,18 +32,25 @@ const en = {
   },
   hero: {
     intro: "My name is",
-    roleSuffix: "Sound Engineer with 10+ years in technology",
+    roleSuffix:
+      "I design and build custom digital solutions — from your business's website to AI-powered tools — explained in plain language, no jargon.",
     viewProjects: "View Projects",
     contactMe: "Contact me",
-    prompt: "stack",
-    roles: ["JavaScript", "React", "Node.js", "Tailwind", "Shopify", "Sound Engineer"],
+    prompt: "I build",
+    roles: [
+      "sites for your business",
+      "online stores",
+      "AI-powered assistants",
+      "tools built to order",
+      "web applications",
+    ],
     stats: { years: "years in tech", projects: "published projects" },
     scroll: "Scroll",
     visualizerLabel: "Decorative audio visualizer",
   },
   about: {
     title: "About",
-    bio: 'I am a Sound Engineer and certified Front End Developer (Desafío Latam), currently completing the Full Stack specialization. I come from over 10 years in audiovisual production and technical leadership, a world where "live" leaves no room for error: it gave me strong analytical skills, a rigorous problem-solving method and a cool head under pressure. Today I design and build digital solutions with JavaScript and TypeScript (React, Next.js and Node.js), with real production experience in generative AI: a RAG-based support assistant and this conversational portfolio, where you can ask an AI directly about my profile.',
+    bio: 'I am a Sound Engineer and certified Front End Developer (Desafío Latam), currently completing the Full Stack specialization. I come from over 10 years in audiovisual production and technical leadership, a world where "live" leaves no room for error: it gave me strong analytical skills, a rigorous problem-solving method and a cool head under pressure. Today I design and build digital solutions with JavaScript and TypeScript (React, Next.js and Node.js), with real production experience in artificial intelligence: an assistant that automatically answers a store\'s customer questions, and this same conversational portfolio, where you can ask an assistant directly about my profile.',
     cards: [
       {
         label: "10+ years",
@@ -124,20 +133,20 @@ const en = {
     title: "Contact",
     intro:
       "Have a project in mind or an opportunity? Leave me a message and I will get back to you shortly.",
-    copy: "[copy]",
-    copied: "[copied]",
+    copy: "Copy",
+    copied: "Copied",
     copyLabel: "Copy",
     form: {
-      name: "[name]",
-      email: "[email]",
-      message: "[message]",
+      name: "Name",
+      email: "Email",
+      message: "Message",
       namePlaceholder: "your name",
       emailPlaceholder: "you@email.com",
       messagePlaceholder: "hi guillermo, ...",
       send: "Send message",
-      sending: "[sending...]",
-      ok: "[ok] message sent. i will get back to you shortly.",
-      errorPrefix: "[error] it could not be sent. write to me at",
+      sending: "Sending...",
+      ok: "Message sent. I will get back to you shortly.",
+      errorPrefix: "It could not be sent. Write to me directly at",
       invalidName: "at least 2 characters",
       invalidEmail: "check the email format",
       invalidMessage: "at least 10 characters",

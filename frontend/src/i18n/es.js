@@ -2,13 +2,15 @@ const es = {
   meta: {
     title: "Guillermo Sias | Full Stack Developer",
     description:
-      "Portafolio de Guillermo Sias - Full Stack Developer especializado en JavaScript, React y Node.js. Ingeniero en Sonido con 10+ años en tecnología.",
+      "Guillermo Sias diseña y desarrolla páginas, tiendas online y herramientas a medida para negocios — y también es Full Stack Developer (JavaScript, React, Node.js) con proyectos reales en producción.",
     ogDescription:
-      "Portafolio de Guillermo Sias - Full Stack Developer especializado en JavaScript, React y Node.js.",
+      "Páginas, tiendas online y herramientas a medida para tu negocio — por Guillermo Sias, Full Stack Developer.",
     siteName: "Guillermo Sias — Portafolio",
     keywords: [
       "Guillermo Sias",
       "Full Stack Developer",
+      "páginas web para negocios",
+      "tiendas online",
       "JavaScript",
       "React",
       "Node.js",
@@ -30,18 +32,25 @@ const es = {
   },
   hero: {
     intro: "Mi nombre es",
-    roleSuffix: "Ingeniero en Sonido con 10+ años en tecnología",
+    roleSuffix:
+      "Diseño y desarrollo soluciones digitales a medida: desde la página de tu negocio hasta herramientas con inteligencia artificial — explicado sin tecnicismos.",
     viewProjects: "Ver Proyectos",
     contactMe: "Contactame",
-    prompt: "stack",
-    roles: ["JavaScript", "React", "Node.js", "Tailwind", "Shopify", "Ingeniero en Sonido"],
+    prompt: "construyo",
+    roles: [
+      "sitios para tu negocio",
+      "tiendas online",
+      "asistentes con IA",
+      "herramientas a medida",
+      "aplicaciones web",
+    ],
     stats: { years: "años en tecnología", projects: "proyectos publicados" },
     scroll: "Scroll",
     visualizerLabel: "Visualizador de audio decorativo",
   },
   about: {
     title: "Sobre mi",
-    bio: 'Soy Ingeniero en Sonido y Desarrollador Front End titulado por Desafío Latam, cursando actualmente la mención Full Stack. Vengo de más de 10 años en producción audiovisual y liderazgo técnico, un mundo donde el "en vivo" no da margen de error: eso me dotó de una sólida capacidad analítica, metodología rigurosa para resolver problemas y cabeza fría bajo presión. Hoy diseño y desarrollo soluciones digitales con JavaScript y TypeScript (React, Next.js y Node.js), con experiencia real desplegada en producción con IA generativa: un asistente de soporte basado en RAG y este portafolio conversacional, donde puedes preguntarle directamente a una IA sobre mi perfil.',
+    bio: 'Soy Ingeniero en Sonido y Desarrollador Front End titulado por Desafío Latam, cursando actualmente la mención Full Stack. Vengo de más de 10 años en producción audiovisual y liderazgo técnico, un mundo donde el "en vivo" no da margen de error: eso me dotó de una sólida capacidad analítica, metodología rigurosa para resolver problemas y cabeza fría bajo presión. Hoy diseño y desarrollo soluciones digitales con JavaScript y TypeScript (React, Next.js y Node.js), con experiencia real desplegada en producción con inteligencia artificial: un asistente que responde automáticamente las dudas de los clientes de una tienda, y este mismo portafolio conversacional, donde puedes preguntarle directamente a un asistente sobre mi perfil.',
     cards: [
       {
         label: "10+ años",
@@ -124,20 +133,20 @@ const es = {
     title: "Contacto",
     intro:
       "¿Tienes un proyecto en mente o una oportunidad? Déjame un mensaje y te respondo a la brevedad.",
-    copy: "[copiar]",
-    copied: "[copiado]",
+    copy: "Copiar",
+    copied: "Copiado",
     copyLabel: "Copiar",
     form: {
-      name: "[nombre]",
-      email: "[email]",
-      message: "[mensaje]",
+      name: "Nombre",
+      email: "Email",
+      message: "Mensaje",
       namePlaceholder: "tu nombre",
       emailPlaceholder: "tu@email.com",
       messagePlaceholder: "hola guillermo, ...",
       send: "Enviar mensaje",
-      sending: "[enviando...]",
-      ok: "[ok] mensaje enviado. te respondo a la brevedad.",
-      errorPrefix: "[error] no fue posible enviarlo. escríbeme a",
+      sending: "Enviando...",
+      ok: "Mensaje enviado. Te respondo a la brevedad.",
+      errorPrefix: "No fue posible enviarlo. Escríbeme directo a",
       invalidName: "mínimo 2 caracteres",
       invalidEmail: "revisa el formato del email",
       invalidMessage: "mínimo 10 caracteres",

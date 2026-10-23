@@ -50,14 +50,14 @@ describe("ContactForm validación", () => {
     expect(await screen.findByText("mínimo 2 caracteres")).toBeInTheDocument();
     expect(screen.getByText("revisa el formato del email")).toBeInTheDocument();
     expect(screen.getByText("mínimo 10 caracteres")).toBeInTheDocument();
-    expect(screen.getByLabelText(/\[nombre\]/)).toHaveAttribute("aria-invalid", "true");
+    expect(screen.getByLabelText(/^nombre$/i)).toHaveAttribute("aria-invalid", "true");
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
   it("cuenta los caracteres del mensaje", async () => {
     const user = userEvent.setup();
     render(<ContactForm />);
-    await user.type(screen.getByLabelText(/\[mensaje\]/), "hola");
+    await user.type(screen.getByLabelText(/^mensaje$/i), "hola");
     expect(screen.getByText("4/2000")).toBeInTheDocument();
   });
 });
@@ -73,7 +73,7 @@ describe("ContactCard", () => {
     render(<ContactCard copy label="Email" value="a@b.cl" />);
     await user.click(screen.getByRole("button", { name: /copiar email/i }));
     expect(writeText).toHaveBeenCalledWith("a@b.cl");
-    expect(await screen.findByText("[copiado]")).toBeInTheDocument();
+    expect(await screen.findByText("Copiado")).toBeInTheDocument();
   });
 });
 

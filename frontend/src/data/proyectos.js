@@ -6,7 +6,7 @@ export const proyectos = [
     destacado: true,
     nombre: "Promusic Academia",
     descripcion:
-      "Landing page de la academia de Promusic construida a medida dentro de su tienda Shopify: cursos vigentes, catálogo de cursos realizados, historia y preguntas frecuentes. Demuestra el manejo de Shopify más allá del catálogo.",
+      "Promusic necesitaba un lugar propio para mostrar sus cursos y resolver inscripciones sin depender de una app externa. Se resolvió con una página a medida dentro de su misma tienda Shopify: cursos vigentes, historial y preguntas frecuentes, manteniendo el carrito y el estilo de la marca.",
     resumen: [
       "Landing page de Promusic Academia, el organismo de capacitación técnica de Promusic en audio en vivo, iluminación, producción musical e industria del entretenimiento. Vive dentro de la tienda Shopify de la marca (promusic.cl) y está pensada para que cualquier visitante entienda qué se dicta, cuándo y cómo inscribirse.",
       "Es una muestra del manejo de Shopify más allá del catálogo de productos: una página totalmente a medida integrada al tema de la tienda, que conserva la navegación, el carrito y el estilo de la marca mientras presenta contenido editorial y de servicios, sin apps externas ni un sitio aparte.",
@@ -23,7 +23,7 @@ export const proyectos = [
     destacado: true,
     nombre: "Chatbot IA Promusic",
     descripcion:
-      "Chatbot comercial con IA integrado en la tienda Shopify de Promusic: responde consultas de catálogo, servicios y tienda en tiempo real, gestiona carrito y seguimiento de envío, y deriva a ventas cuando corresponde.",
+      "La tienda de Promusic recibía siempre las mismas preguntas de catálogo, envíos y horario, y perdía ventas cuando nadie alcanzaba a responder a tiempo. La solución fue un chatbot con inteligencia artificial integrado en la tienda: responde al instante con información real y actualizada, ayuda a agregar productos al carrito, y deriva a un vendedor humano cuando la consulta lo amerita.",
     resumen: [
       "Chatbot de atención e impulso de ventas para la tienda Shopify de Promusic (promusic.cl), en producción real atendiendo clientes. Construido sobre el template oficial de Shopify para agentes de chat y extendido con lógica propia: responde preguntas de catálogo (uso, especificaciones, compatibilidad y accesorios), información de espacios y cursos de la Academia, horario, envíos, métodos de pago y garantías, todo leído en vivo desde la tienda real en vez de contenido estático.",
       "Permite agregar productos al carrito desde la conversación, ofrece venta cruzada basada en las recomendaciones reales de Shopify para cada producto, informa el estado de envío y entiende la jerga técnica de la industria del audio en Chile. Cuando la consulta requiere asesoría a medida o una cotización personalizada, deriva automáticamente al equipo comercial en vez de improvisar una recomendación.",
@@ -40,7 +40,7 @@ export const proyectos = [
     destacado: true,
     nombre: "Studio Fest — App de Registro",
     descripcion:
-      "App de pre-inscripción, check-in de staff y vista pública para Studio Fest, el evento de Promusic con 4 espacios funcionando en simultáneo.",
+      "Studio Fest es un evento de Promusic con 4 espacios funcionando al mismo tiempo — coordinar quién va a cada uno, en cada horario, se había vuelto un caos con una herramienta genérica. Se reemplazó por una app a medida: los asistentes se inscriben una sola vez, el staff controla la asistencia de cada espacio en tiempo real, y el público sigue el programa en vivo.",
     resumen: [
       "Aplicación a medida para Studio Fest, el evento de Promusic con 4 espacios funcionando en paralelo (Estudio, Live Stage, Showroom y Patio) repartidos en bloques horarios compartidos. Reemplaza una solución basada en PowerApps: los asistentes se preinscriben una sola vez eligiendo actividad por bloque, y el staff de cada espacio revisa y gestiona su lista de inscritos desde un panel propio protegido por PIN.",
       'El panel de staff permite marcar asistencia en tiempo real, agregar gente que llega sin reserva previa, buscar por nombre y ver estadísticas generales del evento. La parte pública muestra programa, expositores, ubicación y una vista "en vivo" de qué actividad está ocurriendo en cada espacio en cada momento, además de que cada asistente puede consultar su propia agenda por email.',
@@ -56,7 +56,7 @@ export const proyectos = [
     slug: "asistente-rag",
     nombre: "Asistente RAG",
     descripcion:
-      "Asistente de soporte al cliente basado en RAG: indexa PDFs de conocimiento y responde en un chat con streaming, memoria conversacional y búsqueda vectorial sobre pgvector.",
+      "Pensado para equipos de soporte que responden una y otra vez las mismas preguntas: este asistente lee los documentos reales de la empresa (manuales, políticas, FAQs) y responde al instante basándose únicamente en ellos — si no sabe algo, lo dice en vez de inventar una respuesta.",
     resumen: [
       "Sistema de soporte al cliente inteligente basado en RAG (Retrieval-Augmented Generation): se cargan PDFs de conocimiento (FAQs, políticas, manuales) y un chat responde preguntas en tiempo real anclándose únicamente a esos documentos, sin alucinaciones. Incluye un panel de administración multi-tenant pensado para demostraciones públicas.",
       "La ingesta procesa los PDFs con extracción de texto, fragmentación inteligente y embeddings semánticos. El chat responde en streaming token a token (SSE), mantiene memoria conversacional de las últimas 10 interacciones de la sesión y practica el rechazo honesto: si la información no está en los documentos, lo dice en vez de inventar.",
@@ -73,7 +73,7 @@ export const proyectos = [
     slug: "pizzeria",
     nombre: "Pizzeria",
     descripcion:
-      "Aplicación full-stack de pedidos de pizza con catálogo, carrito y checkout, autenticación JWT y API REST propia en Express.",
+      "Tienda online completa para un negocio de pedidos de pizza: catálogo, carrito de compras y cuentas de usuario, construida desde cero en vez de sobre una plantilla genérica — con su propio sistema de pedidos y login seguro.",
     resumen: [
       "Proyecto full-stack de una pizzería con catálogo de pizzas, carrito de compras y autenticación de usuarios basada en JWT. El frontend consume una API REST propia que gestiona usuarios, pizzas y un checkout simulado, con protección de rutas mediante tokens Bearer.",
       "El estado global se maneja con React Context (Cart, User, Pizzas) y el enrutamiento es SPA con React Router: Login, Register, Profile, Cart, Home y página 404. Las notificaciones usan react-hot-toast y los íconos lucide-react.",
@@ -89,7 +89,7 @@ export const proyectos = [
     slug: "cuppon",
     nombre: "Cuppon",
     descripcion:
-      "Plataforma para crear y gestionar cupones de descuento, pensada para pequeños comercios que quieren automatizar promociones.",
+      "Pensada para pequeños comercios que repartían sus descuentos a mano por redes sociales: una plataforma para publicar y organizar cupones de descuento por categoría, todos en un solo lugar ordenado.",
     resumen: [
       "Landing de cupones de descuento organizados por categorías (comida, tecnología, cuidado personal y más), con una página dedicada por categoría para navegar las promociones disponibles de forma directa.",
       "Sitio estático multipágina construido con HTML5 y CSS3, con foco en maquetación responsive y jerarquía visual clara para destacar cada oferta y facilitar la lectura de condiciones.",

@@ -32,7 +32,7 @@ describe("i18n", () => {
   });
 
   it("localiza los textos de proyectos", () => {
-    expect(getProyectoPorSlug("pizzeria", "en").descripcion).toMatch(/pizza ordering/);
+    expect(getProyectoPorSlug("pizzeria", "en").descripcion).toMatch(/pizza/);
     expect(getProyectoPorSlug("pizzeria", "es").descripcion).toMatch(/pedidos de pizza/);
   });
 });
