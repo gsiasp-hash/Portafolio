@@ -9,10 +9,11 @@ import LanguageToggle from "../atoms/LanguageToggle";
 import PaletteHint from "../atoms/PaletteHint";
 import es from "../../i18n/es";
 
-const sectionIds = ["sobre-mi", "skills", "proyectos", "contacto"];
+const sectionIds = ["servicios", "sobre-mi", "skills", "proyectos", "contacto"];
 
 export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme, paletteT = es.palette }) {
   const links = [
+    { label: t.services, href: `/${lang}#servicios`, id: "servicios" },
     { label: t.about, href: `/${lang}#sobre-mi`, id: "sobre-mi" },
     { label: t.skills, href: `/${lang}#skills`, id: "skills" },
     { label: t.projects, href: `/${lang}#proyectos`, id: "proyectos" },

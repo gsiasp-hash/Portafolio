@@ -22,6 +22,7 @@ const en = {
     projectKeyword: "project",
   },
   nav: {
+    services: "Services",
     about: "About",
     skills: "Skills",
     projects: "Projects",
@@ -47,6 +48,32 @@ const en = {
     stats: { years: "years in tech", projects: "published projects" },
     scroll: "Scroll",
     visualizerLabel: "Decorative audio visualizer",
+  },
+  services: {
+    title: "Services",
+    intro: "Here's what I can do for your business or project, no jargon.",
+    items: [
+      {
+        label: "Websites",
+        description:
+          "So your business looks professional and shows up when people search for it on Google.",
+      },
+      {
+        label: "Online stores",
+        description:
+          "Sell your products or services straight from your site, on Shopify or custom-built.",
+      },
+      {
+        label: "Automation and AI assistants",
+        description:
+          "That answer your customers' repeat questions or take manual tasks off your plate.",
+      },
+      {
+        label: "Custom tools",
+        description:
+          "When what you need doesn't exist off the shelf — we build it from scratch for your case.",
+      },
+    ],
   },
   about: {
     title: "About",
@@ -187,6 +214,7 @@ const en = {
       links: "links",
     },
     items: {
+      services: "go to Services",
       about: "go to About",
       skills: "go to Skills",
       projects: "go to Projects",

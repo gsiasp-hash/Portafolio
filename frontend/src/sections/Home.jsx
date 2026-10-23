@@ -1,5 +1,6 @@
 import AnimatedSection from "../components/templates/AnimatedSection";
 import Hero from "../components/organisms/Hero";
+import Services from "../components/organisms/Services";
 import About from "../components/organisms/About";
 import Skills from "../components/organisms/Skills";
 import Projects from "../components/organisms/Projects";
@@ -10,6 +11,9 @@ export default function Home({ lang, dict }) {
   return (
     <div className="min-h-screen flex flex-col font-mono">
       <Hero t={dict.hero} />
+      <AnimatedSection variant="right">
+        <Services t={dict.services} />
+      </AnimatedSection>
       <AnimatedSection variant="left">
         <About t={dict.about} />
       </AnimatedSection>

@@ -22,6 +22,7 @@ const es = {
     projectKeyword: "proyecto",
   },
   nav: {
+    services: "Servicios",
     about: "Sobre mi",
     skills: "Skills",
     projects: "Proyectos",
@@ -47,6 +48,32 @@ const es = {
     stats: { years: "años en tecnología", projects: "proyectos publicados" },
     scroll: "Scroll",
     visualizerLabel: "Visualizador de audio decorativo",
+  },
+  services: {
+    title: "Servicios",
+    intro: "Esto es lo que puedo hacer por tu negocio o tu proyecto, sin tecnicismos.",
+    items: [
+      {
+        label: "Páginas y sitios web",
+        description:
+          "Para que tu negocio se vea profesional y te encuentren cuando lo busquen en Google.",
+      },
+      {
+        label: "Tiendas online",
+        description:
+          "Vende tus productos o servicios directo desde tu sitio, en Shopify o a medida.",
+      },
+      {
+        label: "Automatizaciones y asistentes con IA",
+        description:
+          "Que respondan las preguntas repetidas de tus clientes o te ahorren tareas manuales.",
+      },
+      {
+        label: "Herramientas a medida",
+        description:
+          "Cuando lo que necesitas no existe armado — lo construimos desde cero para tu caso.",
+      },
+    ],
   },
   about: {
     title: "Sobre mi",
@@ -187,6 +214,7 @@ const es = {
       links: "enlaces",
     },
     items: {
+      services: "ir a Servicios",
       about: "ir a Sobre mí",
       skills: "ir a Skills",
       projects: "ir a Proyectos",

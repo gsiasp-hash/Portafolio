@@ -11,8 +11,9 @@ import { OPEN_PALETTE_EVENT } from "../atoms/PaletteHint";
 const EXIT_MS = 120;
 const EGG_MS = 1800;
 const GROUPS = ["navigate", "projects", "actions", "links"];
-const SECTIONS = ["about", "skills", "projects", "contact"];
+const SECTIONS = ["services", "about", "skills", "projects", "contact"];
 const SECTION_IDS = {
+  services: "servicios",
   about: "sobre-mi",
   skills: "skills",
   projects: "proyectos",
