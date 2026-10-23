@@ -26,6 +26,7 @@ const en = {
     projectKeyword: "project",
   },
   nav: {
+    home: "Go to home",
     services: "Services",
     about: "About",
     skills: "Skills",

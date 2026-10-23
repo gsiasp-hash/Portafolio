@@ -16,7 +16,10 @@ export default function Hero({ t = es.hero }) {
   ];
 
   return (
-    <section className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-28 pb-6">
+    <section
+      id="inicio"
+      className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-28 pb-6"
+    >
       <div className="text-center md:text-left">
         <div className="w-16 h-px bg-accent mx-auto md:mx-0 mb-6 motion-safe:animate-[rise_0.7s_ease-out_both]" />
 

@@ -60,13 +60,15 @@ export default function Navbar({ lang = "es", t = es.nav, themeT = es.theme, pal
           compact ? "h-11" : "h-14"
         }`}
       >
-        <div
+        <a
+          href={`/${lang}#inicio`}
+          aria-label={t.home}
           className={`text-xs leading-none select-none origin-left transition-transform duration-300 ${
             compact ? "scale-90" : ""
           }`}
         >
           [ <span className="text-accent">GS</span> ]
-        </div>
+        </a>
 
         <div className="hidden md:flex items-center gap-6 text-xs">
           {links.map((link) => (

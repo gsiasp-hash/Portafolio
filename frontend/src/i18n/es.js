@@ -26,6 +26,7 @@ const es = {
     projectKeyword: "proyecto",
   },
   nav: {
+    home: "Ir al inicio",
     services: "Servicios",
     about: "Sobre mi",
     skills: "Skills",
