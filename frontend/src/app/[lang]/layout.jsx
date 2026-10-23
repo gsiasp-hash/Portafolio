@@ -87,6 +87,30 @@ export default async function RootLayout({ children, params }) {
                   jobTitle: "Full Stack Developer",
                   url: SITE_URL,
                   email: "contacto@guillermosias.dev",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Santiago",
+                    addressCountry: "CL",
+                  },
+                  knowsAbout: [
+                    "JavaScript",
+                    "TypeScript",
+                    "React",
+                    "Next.js",
+                    "Node.js",
+                    "Shopify",
+                    "AI Automation",
+                    "Power Automate",
+                  ],
+                  makesOffer: dict.services.items.map((item) => ({
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: item.label,
+                      description: item.description,
+                      areaServed: "CL",
+                    },
+                  })),
                   sameAs: [
                     "https://linkedin.com/in/guillermo-sias-762775180",
                     "https://github.com/gsiasp-hash",

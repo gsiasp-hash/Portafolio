@@ -1,6 +1,6 @@
 const en = {
   meta: {
-    title: "Guillermo Sias | Full Stack Developer",
+    title: "Guillermo Sias | Custom Web Development & Full Stack Developer",
     description:
       "Guillermo Sias designs and builds websites, online stores and custom tools for businesses — and is also a Full Stack Developer (JavaScript, React, Node.js) with real projects in production.",
     ogDescription:
@@ -11,6 +11,10 @@ const en = {
       "Full Stack Developer",
       "websites for businesses",
       "online stores",
+      "web developer Chile",
+      "freelance web developer",
+      "custom web development",
+      "AI automation",
       "JavaScript",
       "React",
       "Node.js",
@@ -159,7 +163,7 @@ const en = {
   contact: {
     title: "Contact",
     intro:
-      "Have a project in mind or an opportunity? Leave me a message and I will get back to you shortly.",
+      "Have a project in mind or an opportunity? I work remotely from Santiago, Chile — leave me a message and I will get back to you shortly.",
     copy: "Copy",
     copied: "Copied",
     copyLabel: "Copy",

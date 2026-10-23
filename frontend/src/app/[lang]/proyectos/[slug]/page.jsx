@@ -72,6 +72,35 @@ export default async function ProyectoPage({ params }) {
 
   return (
     <RouteFade>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Guillermo Sias",
+                item: `${SITE_URL}/${lang}`,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: t.title,
+                item: `${SITE_URL}/${lang}#proyectos`,
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: proyecto.nombre,
+                item: `${SITE_URL}/${lang}/proyectos/${slug}`,
+              },
+            ],
+          }),
+        }}
+      />
       <section className="text-ink py-16 px-4 sm:px-6 lg:px-8 w-full max-w-5xl mx-auto">
         <Reveal>
           <Link

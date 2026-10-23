@@ -1,6 +1,6 @@
 const es = {
   meta: {
-    title: "Guillermo Sias | Full Stack Developer",
+    title: "Guillermo Sias | Desarrollo web a medida y Full Stack Developer",
     description:
       "Guillermo Sias diseña y desarrolla páginas, tiendas online y herramientas a medida para negocios — y también es Full Stack Developer (JavaScript, React, Node.js) con proyectos reales en producción.",
     ogDescription:
@@ -11,6 +11,10 @@ const es = {
       "Full Stack Developer",
       "páginas web para negocios",
       "tiendas online",
+      "desarrollador web Chile",
+      "desarrollador web freelance",
+      "desarrollo web a medida",
+      "automatización con inteligencia artificial",
       "JavaScript",
       "React",
       "Node.js",
@@ -18,7 +22,7 @@ const es = {
       "portafolio",
       "developer",
     ],
-    ogLocale: "es_AR",
+    ogLocale: "es_CL",
     projectKeyword: "proyecto",
   },
   nav: {
@@ -159,7 +163,7 @@ const es = {
   contact: {
     title: "Contacto",
     intro:
-      "¿Tienes un proyecto en mente o una oportunidad? Déjame un mensaje y te respondo a la brevedad.",
+      "¿Tienes un proyecto en mente o una oportunidad? Trabajo remoto desde Santiago, Chile — déjame un mensaje y te respondo a la brevedad.",
     copy: "Copiar",
     copied: "Copiado",
     copyLabel: "Copiar",
