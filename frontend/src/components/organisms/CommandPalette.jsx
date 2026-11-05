@@ -252,14 +252,6 @@ export default function CommandPalette({ lang = "es", t = es.palette }) {
           setCopied(true);
           later(() => setCopied(false), 1800);
         },
-      },
-      {
-        id: "action-chat",
-        group: "actions",
-        label: i.chat,
-        keywords: t.keywords.chat,
-        hint: "[chat]",
-        run: () => window.dispatchEvent(new CustomEvent("open-chat")),
       }
     );
     enlaces

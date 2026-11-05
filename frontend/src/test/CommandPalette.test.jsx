@@ -161,18 +161,6 @@ describe("CommandPalette", () => {
     expect(document.cookie).toContain("NEXT_LOCALE=en");
   });
 
-  it("emite open-chat para el asistente", async () => {
-    const user = userEvent.setup();
-    const onChat = vi.fn();
-    window.addEventListener("open-chat", onChat);
-    render(<Harness />);
-    await abrir(user);
-    await user.type(screen.getByRole("combobox"), "hablar con");
-    await user.keyboard("{Enter}");
-    expect(onChat).toHaveBeenCalledTimes(1);
-    window.removeEventListener("open-chat", onChat);
-  });
-
   it("muestra command not found sin resultados", async () => {
     const user = userEvent.setup();
     render(<Harness />);

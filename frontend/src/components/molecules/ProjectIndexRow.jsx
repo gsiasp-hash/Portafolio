@@ -15,10 +15,12 @@ const focusClass =
 function ExternalLinks({ t, demoUrl, repoUrl, className = "" }) {
   return (
     <div className={`flex flex-wrap gap-4 ${className}`}>
-      <a href={demoUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
-        ↗ {t.viewDemo}
-        <span className="sr-only"> ({t.indexExternal})</span>
-      </a>
+      {demoUrl && (
+        <a href={demoUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
+          ↗ {t.viewDemo}
+          <span className="sr-only"> ({t.indexExternal})</span>
+        </a>
+      )}
       {repoUrl && (
         <a href={repoUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
           ↗ {t.code}

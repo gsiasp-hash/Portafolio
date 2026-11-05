@@ -23,6 +23,7 @@ const DESKTOP = "(min-width: 1024px)";
 const pad = (n) => String(n).padStart(2, "0");
 
 const hostOf = (url) => {
+  if (!url) return "";
   try {
     return new URL(url).host;
   } catch {
@@ -158,9 +159,11 @@ export default function CaseStudy({
                 ))}
               </motion.ul>
               <motion.div {...reveal(0.4)} className="flex flex-wrap gap-3 pt-2">
-                <Button href={demoUrl} target="_blank" rel="noopener noreferrer" arrow>
-                  {t.viewDemo}
-                </Button>
+                {demoUrl && (
+                  <Button href={demoUrl} target="_blank" rel="noopener noreferrer" arrow>
+                    {t.viewDemo}
+                  </Button>
+                )}
                 <Link
                   href={`/${lang}/proyectos/${slug}`}
                   className="inline-flex items-center justify-center gap-2 py-3 px-8 rounded-sm text-sm font-medium border border-hairline-strong text-mute hover:text-ink hover:border-ink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"

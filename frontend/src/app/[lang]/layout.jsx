@@ -2,7 +2,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MainTemplate from "../../components/templates/MainTemplate";
 import ScrollProgress from "../../components/organisms/ScrollProgress";
-import ChatWidget from "../../components/organisms/ChatWidget";
 import { notFound } from "next/navigation";
 import { getDictionary } from "../../i18n/dictionaries";
 import { hasLocale, locales } from "../../i18n/config";
@@ -139,7 +138,6 @@ export default async function RootLayout({ children, params }) {
             {children}
           </MainTemplate>
         </div>
-        <ChatWidget t={dict.chat} />
       </body>
     </html>
   );
